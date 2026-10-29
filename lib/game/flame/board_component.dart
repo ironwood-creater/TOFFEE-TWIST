@@ -467,11 +467,11 @@ class BoardComponent extends PositionComponent with DragCallbacks, TapCallbacks
       final color = a.color >= 0 ? SweetArt.baseColors[a.color] : AppColors.gold;
       switch (a.kind) {
         case EffectKind.lineH:
-          fx.beam(Rect.fromLTWH(0, cellRect(a.origin).top, size.x, tile), AppColors.goldLight,
+          fx.beam(Rect.fromLTWH(0, cellRect(a.origin).top, size.x, tile), const Color(0xFFFF9A1F),
               horizontal: true);
           Services.audio.play(Sfx.striped);
         case EffectKind.lineV:
-          fx.beam(Rect.fromLTWH(cellRect(a.origin).left, 0, tile, size.y), AppColors.goldLight,
+          fx.beam(Rect.fromLTWH(cellRect(a.origin).left, 0, tile, size.y), const Color(0xFFFF9A1F),
               horizontal: false);
           Services.audio.play(Sfx.striped);
         case EffectKind.blast:
@@ -485,17 +485,17 @@ class BoardComponent extends PositionComponent with DragCallbacks, TapCallbacks
           Services.audio.play(Sfx.swirl);
           Services.haptics.medium();
         case EffectKind.cross:
-          fx.beam(Rect.fromLTWH(0, cellRect(a.origin).top, size.x, tile), AppColors.goldLight,
+          fx.beam(Rect.fromLTWH(0, cellRect(a.origin).top, size.x, tile), const Color(0xFFFF9A1F),
               horizontal: true);
-          fx.beam(Rect.fromLTWH(cellRect(a.origin).left, 0, tile, size.y), AppColors.goldLight,
+          fx.beam(Rect.fromLTWH(cellRect(a.origin).left, 0, tile, size.y), const Color(0xFFFF9A1F),
               horizontal: false);
           shake(0.3);
           Services.audio.play(Sfx.combo);
           Services.haptics.medium();
         case EffectKind.bigCross:
           final r = cellRect(a.origin);
-          fx.beam(Rect.fromLTWH(0, r.top - tile, size.x, tile * 3), AppColors.goldLight, horizontal: true);
-          fx.beam(Rect.fromLTWH(r.left - tile, 0, tile * 3, size.y), AppColors.goldLight, horizontal: false);
+          fx.beam(Rect.fromLTWH(0, r.top - tile, size.x, tile * 3), const Color(0xFFFF9A1F), horizontal: true);
+          fx.beam(Rect.fromLTWH(r.left - tile, 0, tile * 3, size.y), const Color(0xFFFF9A1F), horizontal: false);
           big = true;
           Services.audio.play(Sfx.combo);
         case EffectKind.boardClear:

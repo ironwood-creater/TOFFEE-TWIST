@@ -127,6 +127,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           action('Credits', Icons.favorite_rounded, () {
                             showPopup<void>(context, const MessageDialog(title: 'Credits', text: credits), dismissible: true);
                           }),
+                          action('Open-source licenses', Icons.description_rounded, () {
+                            showLicensePage(
+                              context: context,
+                              applicationName: AppConfig.appName,
+                              applicationVersion: '1.0.0',
+                            );
+                          }),
                           action('Reset progress', Icons.delete_forever_rounded, _reset),
                         ],
                       ),

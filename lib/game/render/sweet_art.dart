@@ -586,14 +586,14 @@ abstract final class SweetArt {
   }
 
   /// A golden twisted toffee used for the logo, app icon and splash.
-  static void paintLogoToffee(Canvas canvas, Rect rect) {
+  static void paintLogoToffee(Canvas canvas, Rect rect, {bool shadow = true}) {
     canvas.save();
     canvas.translate(rect.left, rect.top);
     canvas.scale(rect.width / 100, rect.height / 100);
     canvas.translate(50, 50);
     canvas.rotate(-0.35);
     canvas.translate(-50, -50);
-    _shadow(canvas);
+    if (shadow) _shadow(canvas);
     _toffee(canvas);
     _sparkle(canvas, const Offset(80, 20), 7);
     _sparkle(canvas, const Offset(18, 80), 5);

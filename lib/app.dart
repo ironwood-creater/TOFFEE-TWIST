@@ -51,7 +51,7 @@ class _ToffeeTwistAppState extends State<ToffeeTwistApp> with WidgetsBindingObse
 
 /// Web-only helper used for testing and store screenshots:
 /// `?level=12` opens level 12 directly, `?test=win|lose` opens tiny test levels,
-/// `&seed=5` fixes the random seed.
+/// `&seed=5` fixes the random seed, `&slowmo=0.1` plays animations slowly.
 class _WebLevelLauncher extends StatefulWidget {
   const _WebLevelLauncher();
 
@@ -62,12 +62,14 @@ class _WebLevelLauncher extends StatefulWidget {
 class _WebLevelLauncherState extends State<_WebLevelLauncher> {
   LevelDef? _level;
   int? _seed;
+  double _timeScale = 1;
 
   @override
   void initState() {
     super.initState();
     final q = Uri.base.queryParameters;
     _seed = int.tryParse(q['seed'] ?? '');
+    _timeScale = double.tryParse(q['slowmo'] ?? '') ?? 1;
     final test = q['test'];
     if (test == 'win' || test == 'lose') {
       _level = LevelDef(
@@ -76,7 +78,7 @@ class _WebLevelLauncherState extends State<_WebLevelLauncher> {
         colors: const [0, 1, 2, 3, 4],
         board: List.filled(8, '........'),
         goals: test == 'win' ? const [GoalDef.score(60)] : const [GoalDef.collect(2, 40), GoalDef.collect(4, 30)],
-        stars: const [60, 1500, 3000],
+        stars: const [60, 1200, 2400],
       );
       return;
     }
@@ -88,6 +90,6 @@ class _WebLevelLauncherState extends State<_WebLevelLauncher> {
   Widget build(BuildContext context) {
     final level = _level;
     if (level == null) return const Scaffold(backgroundColor: AppColors.cream);
-    return GameScreen(level: level, seed: _seed ?? 12345);
+    return GameScreen(level: level, seed: _seed ?? 12345, timeScale: _timeScale);
   }
 }

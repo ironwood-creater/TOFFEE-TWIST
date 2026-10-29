@@ -8,10 +8,13 @@ import 'board_component.dart';
 /// The Flame game: only the board lives here. The HUD (moves, goals, score,
 /// boosters) is normal Flutter UI around it.
 class TwistGame extends FlameGame {
-  TwistGame({required this.session, required this.pixelRatio});
+  TwistGame({required this.session, required this.pixelRatio, this.timeScale = 1});
 
   final GameSession session;
   final double pixelRatio;
+
+  /// 1 = normal speed. Smaller values give slow motion (used for screenshots).
+  final double timeScale;
   late final BoardComponent board;
   bool _ready = false;
   final Vector2 _lastSize = Vector2.zero();
@@ -27,6 +30,9 @@ class TwistGame extends FlameGame {
     _lastSize.setFrom(size);
     _ready = true;
   }
+
+  @override
+  void update(double dt) => super.update(dt * timeScale);
 
   @override
   void onGameResize(Vector2 size) {

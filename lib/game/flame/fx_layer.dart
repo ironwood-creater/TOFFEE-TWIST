@@ -81,9 +81,13 @@ class _BeamFx extends _Fx {
         ? Rect.fromCenter(center: center, width: len, height: thick)
         : Rect.fromCenter(center: center, width: thick, height: len);
     _p
-      ..color = color.withValues(alpha: 0.55 * (1 - k))
-      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8);
-    c.drawRRect(RRect.fromRectAndRadius(r.inflate(6), Radius.circular(thick)), _p);
+      ..color = color.withValues(alpha: 0.85 * (1 - k))
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10);
+    c.drawRRect(RRect.fromRectAndRadius(r.inflate(8), Radius.circular(thick)), _p);
+    _p
+      ..color = const Color(0xFFFFE08A).withValues(alpha: 0.9 * (1 - k))
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 3);
+    c.drawRRect(RRect.fromRectAndRadius(r.deflate(thick * 0.12), Radius.circular(thick)), _p);
     _p
       ..color = const Color(0xFFFFFFFF).withValues(alpha: 1 - k)
       ..maskFilter = null;

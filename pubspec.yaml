@@ -23,6 +23,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.8
 
 flutter:
   uses-material-design: true
@@ -30,6 +32,8 @@ flutter:
   assets:
     - assets/levels/
     - assets/audio/
+    - assets/fonts/Baloo2-OFL.txt
+    - assets/fonts/Nunito-OFL.txt
 
   fonts:
     - family: Baloo2
@@ -50,3 +54,31 @@ flutter:
           weight: 700
         - asset: assets/fonts/Nunito-ExtraBold.ttf
           weight: 800
+
+# App icon: `dart run flutter_launcher_icons` (images made by tool/branding/).
+flutter_launcher_icons:
+  android: "ic_launcher"
+  ios: false
+  image_path: "branding/icon_full.png"
+  min_sdk_android: 24
+  adaptive_icon_background: "branding/icon_background.png"
+  adaptive_icon_foreground: "branding/icon_foreground.png"
+  adaptive_icon_monochrome: "branding/icon_monochrome.png"
+  # The foreground image already keeps the toffee inside the safe zone.
+  adaptive_icon_foreground_inset: 0
+  web:
+    generate: true
+    image_path: "branding/icon_full.png"
+    background_color: "#F8C66E"
+    theme_color: "#E8A23B"
+
+# Splash screen: `dart run flutter_native_splash:create`
+flutter_native_splash:
+  color: "#FFE9C4"
+  image: branding/splash.png
+  android_12:
+    image: branding/splash_android12.png
+    color: "#FFE9C4"
+  android_screen_orientation: portrait
+  ios: false
+  web: false

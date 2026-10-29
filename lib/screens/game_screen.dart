@@ -25,11 +25,15 @@ class GameScreen extends StatefulWidget {
     required this.level,
     this.startBoosters = const {},
     this.seed,
+    this.timeScale = 1,
   });
 
   final LevelDef level;
   final Set<Booster> startBoosters;
   final int? seed;
+
+  /// Animation speed (1 = normal). Only changed for screenshots.
+  final double timeScale;
 
   /// The most recent session (lets widget tests look inside).
   @visibleForTesting
@@ -62,7 +66,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
       startBox: widget.startBoosters.contains(Booster.startBox),
       consumeBooster: progress.useBooster,
     )..onFinished = _onFinished;
-    game = TwistGame(session: session, pixelRatio: ratio);
+    game = TwistGame(session: session, pixelRatio: ratio, timeScale: widget.timeScale);
     GameScreen.debugLastSession = session;
     GameScreen.debugLastGame = game;
     WidgetsBinding.instance.addPostFrameCallback((_) => _start());
