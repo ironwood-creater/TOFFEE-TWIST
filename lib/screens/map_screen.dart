@@ -90,13 +90,12 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
 
   @override
   Widget build(BuildContext context) {
-    final banner = Services.ads.banner();
     return Scaffold(
       body: ShopBackground(
         colors: const [Color(0xFFFCE5C0), Color(0xFFF3CF98)],
         child: SafeArea(
           child: ListenableBuilder(
-            listenable: Services.progress,
+            listenable: Listenable.merge([Services.progress, Services.ads]),
             builder: (context, _) => Column(
               children: [
                 _MapTopBar(onBack: () => Navigator.of(context).maybePop()),
@@ -130,7 +129,8 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
                     ],
                   ),
                 ),
-                if (banner != null && !Services.progress.removeAds) banner,
+                // Banner ads appear only here on the map, never on the game board.
+                if (!Services.progress.removeAds) Services.ads.banner() ?? const SizedBox.shrink(),
               ],
             ),
           ),

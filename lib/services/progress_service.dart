@@ -109,6 +109,7 @@ class ProgressService extends ChangeNotifier {
   final Set<String> _tutorials = {};
   int _levelsSinceInterstitial = 0;
   int _levelsFinished = 0;
+  final List<String> _delivered = [];
 
   DateTime get now => _clock();
 
@@ -309,6 +310,16 @@ class ProgressService extends ChangeNotifier {
 
   bool get removeAds => _removeAds;
 
+  /// Remembers a coin purchase so it is never credited twice. Returns false
+  /// if it was already delivered.
+  bool markPurchaseDelivered(String purchaseId) {
+    if (_delivered.contains(purchaseId)) return false;
+    _delivered.add(purchaseId);
+    if (_delivered.length > 200) _delivered.removeAt(0);
+    _save();
+    return true;
+  }
+
   set removeAds(bool v) {
     _removeAds = v;
     _save();
@@ -330,9 +341,11 @@ class ProgressService extends ChangeNotifier {
   /// Deletes all progress (Settings > Reset progress). Purchases stay.
   Future<void> reset() async {
     final keepAds = _removeAds;
+    final keepDelivered = List.of(_delivered);
     await _prefs.remove(_key);
     _load();
     _removeAds = keepAds;
+    _delivered.addAll(keepDelivered);
     _save();
   }
 
@@ -360,6 +373,7 @@ class ProgressService extends ChangeNotifier {
     _tutorials.clear();
     _levelsSinceInterstitial = 0;
     _levelsFinished = 0;
+    _delivered.clear();
 
     final raw = _prefs.getString(_key);
     if (raw == null) return;
@@ -388,6 +402,7 @@ class ProgressService extends ChangeNotifier {
       _tutorials.addAll((j['tutorials'] as List? ?? const []).cast<String>());
       _levelsSinceInterstitial = j['sinceAd'] as int? ?? 0;
       _levelsFinished = j['finished'] as int? ?? 0;
+      _delivered.addAll((j['delivered'] as List? ?? const []).cast<String>());
     } catch (e) {
       debugPrint('Could not read saved progress: $e');
     }
@@ -412,6 +427,7 @@ class ProgressService extends ChangeNotifier {
       'tutorials': _tutorials.toList(),
       'sinceAd': _levelsSinceInterstitial,
       'finished': _levelsFinished,
+      'delivered': _delivered,
     };
     _prefs.setString(_key, jsonEncode(j));
     if (notify) notifyListeners();

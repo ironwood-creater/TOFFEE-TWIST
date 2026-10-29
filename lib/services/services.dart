@@ -1,10 +1,13 @@
+import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../levels/level_repository.dart';
+import 'admob_service.dart';
 import 'ads_service.dart';
 import 'audio_service.dart';
 import 'haptics.dart';
 import 'iap_service.dart';
+import 'play_billing_service.dart';
 import 'progress_service.dart';
 
 export 'ads_service.dart' show RewardedPurpose;
@@ -29,7 +32,37 @@ abstract final class Services {
     audio = AudioService(progress);
     haptics = Haptics(progress);
     levels = LevelRepository();
+    if (_isAndroid) {
+      ads = AdmobAdsService(progress, audio);
+      iap = PlayBillingService(progress);
+    } else {
+      ads = NoAdsService();
+      iap = NoIapService(placeholderProducts());
+    }
     _ready = true;
     await audio.init();
+  }
+
+  static bool get _isAndroid => !kIsWeb && defaultTargetPlatform == TargetPlatform.android;
+
+  /// Starts the store and the ads (consent form first). Called once the first
+  /// screen is visible, so Google's consent form can be shown.
+  static Future<void> startStoreAndAds() async {
+    final i = iap;
+    if (i is PlayBillingService) {
+      try {
+        await i.start();
+      } catch (e) {
+        debugPrint('Store not available: $e');
+      }
+    }
+    final a = ads;
+    if (a is AdmobAdsService) {
+      try {
+        await a.start();
+      } catch (e) {
+        debugPrint('Ads not available: $e');
+      }
+    }
   }
 }

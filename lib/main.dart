@@ -9,4 +9,7 @@ Future<void> main() async {
   await lockPortrait();
   await Services.init();
   runApp(const ToffeeTwistApp());
+  // Ask for ad consent (if needed) and connect to Google Play after the
+  // first frame, so the game shows up immediately.
+  WidgetsBinding.instance.addPostFrameCallback((_) => Services.startStoreAndAds());
 }

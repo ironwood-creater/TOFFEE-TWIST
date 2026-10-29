@@ -41,14 +41,6 @@ abstract final class LevelFlow {
             builder: (_) => GameScreen(
               level: level,
               startBoosters: boosters,
-              ads: GameAdHooks(
-                extraMoves: ads.rewardedReady
-                    ? () => ads.showRewarded(RewardedPurpose.extraMoves)
-                    : null,
-                tripleCoins: ads.rewardedReady
-                    ? () => ads.showRewarded(RewardedPurpose.tripleCoins)
-                    : null,
-              ),
             ),
           ),
         );

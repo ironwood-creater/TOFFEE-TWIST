@@ -19,25 +19,16 @@ import 'dialogs/tutorial_dialog.dart';
 /// How the player left the game screen.
 enum GameExit { next, retry, map }
 
-/// Hooks for rewarded ads (filled in by the ads service; null = no ads).
-class GameAdHooks {
-  const GameAdHooks({this.extraMoves, this.tripleCoins});
-  final Future<bool> Function()? extraMoves;
-  final Future<bool> Function()? tripleCoins;
-}
-
 class GameScreen extends StatefulWidget {
   const GameScreen({
     super.key,
     required this.level,
     this.startBoosters = const {},
-    this.ads = const GameAdHooks(),
     this.seed,
   });
 
   final LevelDef level;
   final Set<Booster> startBoosters;
-  final GameAdHooks ads;
   final int? seed;
 
   /// The most recent session (lets widget tests look inside).
@@ -114,7 +105,8 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
       _ended = true;
       final stars = session.stars;
       final coins = progress.recordWin(widget.level.id, stars, session.engine.score);
-      final triple = widget.ads.tripleCoins;
+      final ads = Services.ads;
+      final triple = ads.rewardedReady ? () => ads.showRewarded(RewardedPurpose.tripleCoins) : null;
       final tripled = await showPopup<bool>(
         context,
         WinDialog(
@@ -141,7 +133,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
         goals: session.engine.goals,
         price: price,
         canAfford: progress.coins >= price,
-        adAvailable: widget.ads.extraMoves != null,
+        adAvailable: Services.ads.rewardedReady,
       ),
     );
     if (!mounted) return;
@@ -153,7 +145,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
           return;
         }
       case LoseChoice.adMoves:
-        final ok = await widget.ads.extraMoves!();
+        final ok = await Services.ads.showRewarded(RewardedPurpose.extraMoves);
         if (ok) {
           session.continueWithMoves(5);
           return;
