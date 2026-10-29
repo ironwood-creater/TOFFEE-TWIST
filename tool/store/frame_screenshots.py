@@ -21,6 +21,10 @@ CAPTIONS = {
     '6_win.png': 'Earn stars\nand coins',
     '7_daily.png': 'Sweet daily\nlogin rewards',
     '8_spin.png': 'A free spin\nevery day!',
+    '9_swirl_combo.png': 'Swirl + Striped:\nfire them all at once!',
+    '10_nuts.png': 'Bring the golden nuts\ndown to the bottom',
+    '11_booster.png': 'Handy boosters\nwhen you get stuck',
+    '12_hard_level.png': 'A tough challenge\nevery 10 levels',
 }
 
 W, H = 1080, 1920
@@ -87,7 +91,7 @@ def main():
         if not os.path.exists(src):
             print('missing', src)
             continue
-        frame(src, os.path.join(out_dir, f'screenshot_{i}.png'), text)
+        frame(src, os.path.join(out_dir, f'screenshot_{i:02d}.png'), text)
     print('framed screenshots in', out_dir)
 
 

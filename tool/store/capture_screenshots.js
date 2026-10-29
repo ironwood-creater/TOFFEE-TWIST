@@ -6,7 +6,7 @@
 const { chromium } = require('playwright');
 const path = require('path');
 
-const [base = 'http://localhost:8080', outDir = 'store_assets/raw'] = process.argv.slice(2);
+const [base = 'http://localhost:8080', outDir = 'store_assets/raw', ...only] = process.argv.slice(2);
 const W = 432, H = 768, SCALE = 2.5; // -> 1080 x 1920
 
 function day(offset) {
@@ -28,6 +28,7 @@ function progress({ levels = 0, dailyIndex = 0, lastDaily = day(0), coins = 1480
 }
 
 async function shot(browser, name, url, save, actions = []) {
+  if (only.length && !only.some((o) => name.startsWith(o))) return;
   const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: SCALE });
   await ctx.addInitScript(([key, value]) => {
     window.localStorage.setItem(key, value);
@@ -72,5 +73,15 @@ async function shot(browser, name, url, save, actions = []) {
   await shot(browser, '7_daily.png', '/', progress({ levels: 36, dailyIndex: 3, lastDaily: day(-1) }));
   // 8 Spin wheel
   await shot(browser, '8_spin.png', '/', progress({ levels: 36 }), [{ click: [167, 705] }, { wait: 1200 }]);
+  // 9 Toffee Swirl + Striped Toffee: every cupcake turns striped and fires (slow motion)
+  await shot(browser, '9_swirl_combo.png', '/?level=24&seed=11&slowmo=0.08', { ...progress({ levels: 23 }), tutorials: ['level_24'] }, [
+    { drag: [171, 408, 216, 408] }, { wait: 5200 },
+  ]);
+  // 10 Golden nuts and crates on a plus-shaped board
+  await shot(browser, '10_nuts.png', '/?level=28&seed=6', progress({ levels: 27 }));
+  // 11 Rolling Pin booster selected during play
+  await shot(browser, '11_booster.png', '/?level=30&seed=3', progress({ levels: 29 }), [{ click: [44, 728] }, { wait: 900 }]);
+  // 12 Start-of-level popup for a hard level with start boosters
+  await shot(browser, '12_hard_level.png', '/', progress({ levels: 39 }), [{ click: [216, 528] }, { wait: 2800 }]);
   await browser.close();
 })();

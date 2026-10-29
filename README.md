@@ -77,6 +77,8 @@ each 50 times; normal levels must have a 60-85% bot win rate, hard levels
 | `dart run flutter_launcher_icons` | Builds the Android app icons from `branding/` |
 | `dart run flutter_native_splash:create` | Builds the splash screen |
 | `node tool/store/capture_screenshots.js` + `python3 tool/store/frame_screenshots.py` | Store screenshots from the web build |
+| `flutter test tool/branding/render_marketing_test.dart` | Logo files and promo banners (`store_assets/logo`, `store_assets/banners`) |
+| `python3 tool/store/flatten_png.py <files>` | Removes transparency (needed for the feature graphic and banners) |
 
 The web build is only used for testing and screenshots:
 `flutter build web --release --no-web-resources-cdn`. Open it with

@@ -1,87 +1,14 @@
 // Renders the app icon, splash and store graphics from the game's own art.
 //   flutter test tool/branding/render_branding_test.dart
 // Output: branding/*.png and store_assets/*.png
-import 'dart:io';
 import 'dart:math' as math;
-import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:toffeetwist/game/logic/types.dart';
 import 'package:toffeetwist/game/render/sweet_art.dart';
 
-Future<void> loadFonts() async {
-  Future<void> load(String family, List<String> files) async {
-    final loader = FontLoader(family);
-    for (final f in files) {
-      final bytes = File('assets/fonts/$f').readAsBytesSync();
-      loader.addFont(Future.value(ByteData.view(bytes.buffer)));
-    }
-    await loader.load();
-  }
-
-  await load('Baloo2', ['Baloo2-ExtraBold.ttf']);
-  await load('Nunito', ['Nunito-ExtraBold.ttf']);
-}
-
-Future<void> savePng(String path, int w, int h, void Function(Canvas c, Size s) paint) async {
-  final rec = ui.PictureRecorder();
-  final c = Canvas(rec);
-  paint(c, Size(w.toDouble(), h.toDouble()));
-  final img = await rec.endRecording().toImage(w, h);
-  final data = await img.toByteData(format: ui.ImageByteFormat.png);
-  File(path)
-    ..createSync(recursive: true)
-    ..writeAsBytesSync(data!.buffer.asUint8List());
-}
-
-void warmBackground(Canvas c, Size s, {bool dots = true}) {
-  final r = Offset.zero & s;
-  c.drawRect(
-    r,
-    Paint()
-      ..shader = ui.Gradient.radial(
-        s.center(Offset.zero),
-        s.longestSide * 0.75,
-        const [Color(0xFFFFF1CF), Color(0xFFF8C66E), Color(0xFFE39A2F)],
-        const [0, 0.55, 1],
-      ),
-  );
-  if (!dots) return;
-  final p = Paint()..color = const Color(0x2EFFFFFF);
-  final step = s.shortestSide / 9;
-  var row = 0;
-  for (var y = step / 3; y < s.height; y += step, row++) {
-    for (var x = row.isEven ? step / 3 : step * 0.83; x < s.width; x += step) {
-      c.drawCircle(Offset(x, y), step * 0.12, p);
-    }
-  }
-}
-
-void toffee(Canvas c, Offset center, double size, {bool shadow = true}) =>
-    SweetArt.paintLogoToffee(c, Rect.fromCenter(center: center, width: size, height: size), shadow: shadow);
-
-void outlinedText(Canvas c, String text, Offset center, double size,
-    {List<Color> fill = const [Color(0xFFFFF4C2), Color(0xFFFFCB3C), Color(0xFFE39A0C)]}) {
-  TextPainter tp(Paint fg) => TextPainter(
-        text: TextSpan(
-          text: text,
-          style: TextStyle(fontFamily: 'Baloo2', fontWeight: FontWeight.w800, fontSize: size, height: 1, foreground: fg),
-        ),
-        textDirection: TextDirection.ltr,
-      )..layout();
-  final stroke = tp(Paint()
-    ..style = PaintingStyle.stroke
-    ..strokeWidth = size * 0.16
-    ..strokeJoin = StrokeJoin.round
-    ..color = const Color(0xFF3B1F12));
-  final off = center - Offset(stroke.width / 2, stroke.height / 2);
-  stroke.paint(c, off);
-  final stops = [for (var i = 0; i < fill.length; i++) i / (fill.length - 1)];
-  final shader = ui.Gradient.linear(Offset(0, off.dy), Offset(0, off.dy + stroke.height), fill, stops);
-  tp(Paint()..shader = shader).paint(c, off);
-}
+import 'brand_kit.dart';
 
 void main() {
   setUpAll(loadFonts);
