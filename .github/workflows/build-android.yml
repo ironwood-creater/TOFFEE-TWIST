@@ -1,7 +1,8 @@
 # Builds the Android app on GitHub's computers, so you don't need Android Studio.
 #
 # It runs by itself after every push (and from the "Actions" tab >
-# "Build Android app" > "Run workflow"). After about 15 minutes the files
+# "Build Android app" > "Run workflow"). It also opens the game on an Android
+# emulator to check that it starts. After about 25 minutes the files
 # appear on the repository's "Releases" page under "Latest build":
 #   toffee-twist.apk  - open this on your Android phone to install and play
 #   toffee-twist.aab  - the bundle for Google Play
@@ -70,20 +71,73 @@ jobs:
             build/app/outputs/flutter-apk/app-release.apk
             build/app/outputs/bundle/release/app-release.aab
 
+  # Installs the APK on an Android emulator and checks that the game opens
+  # without crashing. The crash log is printed in this job's output.
+  emulator-test:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: toffee-twist-android
+          path: artifact
+
+      - name: Enable the emulator's hardware acceleration
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Open the game on the emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: google_apis
+          arch: x86_64
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          script: bash .github/scripts/smoke_test.sh artifact/flutter-apk/app-release.apk
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: emulator-test
+          path: |
+            logcat.txt
+            emulator-screenshot.png
+
+  publish:
+    needs: [build, emulator-test]
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: toffee-twist-android
+          path: artifact
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: emulator-test
+          path: emulator
+
       - name: Publish to the "Latest build" release
-        if: github.ref_name == github.event.repository.default_branch
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
+          SIGNED: ${{ secrets.UPLOAD_KEYSTORE_BASE64 != '' }}
         run: |
-          cp build/app/outputs/flutter-apk/app-release.apk toffee-twist.apk
-          cp build/app/outputs/bundle/release/app-release.aab toffee-twist.aab
-          if [ -f android/key.properties ]; then
+          cp artifact/flutter-apk/app-release.apk toffee-twist.apk
+          cp artifact/bundle/release/app-release.aab toffee-twist.aab
+          if [ "$SIGNED" = true ]; then
             SIGNING="The .aab is signed with your upload key and can be uploaded to Google Play."
           else
             SIGNING="Signed with a debug key: the .apk installs on a phone, but Google Play will not accept this .aab (see the top of .github/workflows/build-android.yml)."
           fi
           gh release delete latest-build --yes --cleanup-tag || true
-          gh release create latest-build toffee-twist.apk toffee-twist.aab \
+          gh release create latest-build toffee-twist.apk toffee-twist.aab emulator/emulator-screenshot.png \
             --target "$GITHUB_SHA" --prerelease --title "Latest build" \
-            --notes "Built automatically from commit $GITHUB_SHA. $SIGNING"
+            --notes "Built automatically from commit $GITHUB_SHA and opened on an Android emulator without crashing. $SIGNING"

@@ -110,7 +110,7 @@ is missing - redo Step 6.
 
 **No Android Studio? Let GitHub build it.** Every push to GitHub builds the
 game automatically (or start it yourself: **Actions** tab > **Build Android
-app** > **Run workflow**). About 15 minutes later the repository's
+app** > **Run workflow**). About 25 minutes later the repository's
 **Releases** page has a **Latest build** with `toffee-twist.apk` (open it on
 your phone to install) and `toffee-twist.aab` (for Google Play). To have the
 `.aab` signed with your upload key, add the two secrets described at the top
