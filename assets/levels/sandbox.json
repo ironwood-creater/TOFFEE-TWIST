@@ -1,0 +1,35 @@
+{
+  "id": 9999,
+  "kind": "normal",
+  "moves": 30,
+  "sweets": ["toffee", "cupcake", "donut", "macaron", "lollipop", "chocolate"],
+  "goals": [
+    {"type": "caramel"},
+    {"type": "crates"},
+    {"type": "nuts", "count": 2, "maxOnBoard": 1},
+    {"type": "collect", "sweet": "donut", "count": 15}
+  ],
+  "stars": [3000, 8000, 15000],
+  "board": [
+    "##.....##",
+    "#...n...#",
+    ".........",
+    "..cc.cc..",
+    "..cCCCc..",
+    "...121...",
+    ".........",
+    "#.......#",
+    "##.....##"
+  ],
+  "presetSpecials": [
+    ".........",
+    ".........",
+    ".-.....|.",
+    ".........",
+    ".........",
+    ".........",
+    "..b...s..",
+    ".........",
+    "........."
+  ]
+}
