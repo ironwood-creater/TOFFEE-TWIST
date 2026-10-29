@@ -11,6 +11,7 @@ import '../services/progress_service.dart';
 import '../services/services.dart';
 import '../theme.dart';
 import '../widgets/goal_widgets.dart';
+import '../widgets/top_bar.dart';
 import '../widgets/ui.dart';
 import 'dialogs/game_dialogs.dart';
 import 'dialogs/tutorial_dialog.dart';
@@ -544,40 +545,7 @@ class RollingPinIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) =>
-      SizedBox(width: size, height: size, child: CustomPaint(painter: _RollingPinPainter()));
-}
-
-class _RollingPinPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final w = size.width;
-    canvas.save();
-    canvas.translate(w / 2, size.height / 2);
-    canvas.rotate(-0.6);
-    final handle = Paint()..color = const Color(0xFF8C5220);
-    final body = Paint()
-      ..shader = const LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-        colors: [Color(0xFFF5D3A0), Color(0xFFC98D4E)],
-      ).createShader(Rect.fromCenter(center: Offset.zero, width: w, height: w * 0.3));
-    canvas.drawRRect(RRect.fromRectAndRadius(Rect.fromCenter(center: Offset.zero, width: w, height: w * 0.12),
-        Radius.circular(w * 0.06)), handle);
-    canvas.drawRRect(RRect.fromRectAndRadius(Rect.fromCenter(center: Offset.zero, width: w * 0.62, height: w * 0.3),
-        Radius.circular(w * 0.12)), body);
-    canvas.drawRRect(
-      RRect.fromRectAndRadius(Rect.fromCenter(center: Offset.zero, width: w * 0.62, height: w * 0.3),
-          Radius.circular(w * 0.12)),
-      Paint()
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.6
-        ..color = const Color(0xFF6B3A10),
-    );
-    canvas.restore();
-  }
-
-  @override
-  bool shouldRepaint(_RollingPinPainter oldDelegate) => false;
+      SizedBox(width: size, height: size, child: CustomPaint(painter: RollingPinPainter()));
 }
 
 /// Offer to buy a booster with coins.

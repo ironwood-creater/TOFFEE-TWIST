@@ -61,6 +61,33 @@ class ProgressService extends ChangeNotifier {
     Reward(coins: 300, boosters: {Booster.rollingPin: 1, Booster.freeSwap: 1}),
   ];
 
+  /// Daily spin wheel prizes (coins and boosters only) and how likely each
+  /// one is. Spins are free once a day (+1 for watching a video) and can
+  /// never be bought.
+  static const spinRewards = <(Reward, int)>[
+    (Reward(coins: 25), 22),
+    (Reward(boosters: {Booster.rollingPin: 1}), 12),
+    (Reward(coins: 50), 18),
+    (Reward(boosters: {Booster.extraMoves: 1}), 12),
+    (Reward(coins: 100), 12),
+    (Reward(boosters: {Booster.freeSwap: 1}), 12),
+    (Reward(coins: 250), 4),
+    (Reward(boosters: {Booster.startBox: 1}), 8),
+  ];
+
+  /// Picks a spin wheel segment index using [roll] in [0, 1).
+  static int pickSpin(double roll) {
+    final total = spinRewards.fold(0, (a, r) => a + r.$2);
+    var x = roll * total;
+    for (var i = 0; i < spinRewards.length; i++) {
+      x -= spinRewards[i].$2;
+      if (x < 0) return i;
+    }
+    return 0;
+  }
+
+  static const refillLivesPrice = 600;
+
   final SharedPreferences _prefs;
   final DateTime Function() _clock;
 
@@ -212,6 +239,13 @@ class ProgressService extends ChangeNotifier {
     _regenerate();
     _lives = math.min(maxLives, _lives + n);
     _save();
+  }
+
+  /// Refill all lives with coins.
+  bool refillLives() {
+    if (lives >= maxLives || !spendCoins(refillLivesPrice)) return false;
+    addLives(maxLives);
+    return true;
   }
 
   void _regenerate() {

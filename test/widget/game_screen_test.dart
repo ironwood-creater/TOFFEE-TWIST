@@ -24,7 +24,7 @@ void main() {
     tester.view.devicePixelRatio = 2;
     addTearDown(tester.view.reset);
     await tester.runAsync(() => Services.init());
-    final level = LevelDef.parse(File('assets/levels/sandbox.json').readAsStringSync());
+    final level = LevelDef.parse(File('tool/levels/sandbox.json').readAsStringSync());
     await tester.pumpWidget(MaterialApp(home: GameScreen(level: level, seed: 12345)));
     await pumpFor(tester, 1);
     final session = GameScreen.debugLastSession!;

@@ -1,47 +1,74 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'game/logic/level.dart';
 import 'screens/game_screen.dart';
+import 'screens/home_screen.dart';
 import 'services/services.dart';
 import 'theme.dart';
 
-class ToffeeTwistApp extends StatelessWidget {
+class ToffeeTwistApp extends StatefulWidget {
   const ToffeeTwistApp({super.key});
 
   @override
+  State<ToffeeTwistApp> createState() => _ToffeeTwistAppState();
+}
+
+class _ToffeeTwistAppState extends State<ToffeeTwistApp> with WidgetsBindingObserver {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.paused) {
+      Services.audio.pauseForBackground();
+    } else if (state == AppLifecycleState.resumed) {
+      Services.audio.resumeFromBackground();
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final debugParams = kIsWeb &&
+        (Uri.base.queryParameters.containsKey('level') || Uri.base.queryParameters.containsKey('test'));
     return MaterialApp(
       title: 'Toffee Twist',
       debugShowCheckedModeBanner: false,
       theme: buildTheme(),
-      home: const _DevLauncher(),
+      home: debugParams ? const _WebLevelLauncher() : const HomeScreen(),
     );
   }
 }
 
-/// Temporary start screen used while building the game: opens the sandbox
-/// level (or `?level=sandbox` on the web).
-class _DevLauncher extends StatefulWidget {
-  const _DevLauncher();
+/// Web-only helper used for testing and store screenshots:
+/// `?level=12` opens level 12 directly, `?test=win|lose` opens tiny test levels,
+/// `&seed=5` fixes the random seed.
+class _WebLevelLauncher extends StatefulWidget {
+  const _WebLevelLauncher();
 
   @override
-  State<_DevLauncher> createState() => _DevLauncherState();
+  State<_WebLevelLauncher> createState() => _WebLevelLauncherState();
 }
 
-class _DevLauncherState extends State<_DevLauncher> {
+class _WebLevelLauncherState extends State<_WebLevelLauncher> {
   LevelDef? _level;
   int? _seed;
 
   @override
   void initState() {
     super.initState();
-    if (kIsWeb) {
-      final s = Uri.base.queryParameters['seed'];
-      if (s != null) _seed = int.tryParse(s);
-    }
-    final test = kIsWeb ? Uri.base.queryParameters['test'] : null;
+    final q = Uri.base.queryParameters;
+    _seed = int.tryParse(q['seed'] ?? '');
+    final test = q['test'];
     if (test == 'win' || test == 'lose') {
       _level = LevelDef(
         id: 7,
@@ -53,14 +80,8 @@ class _DevLauncherState extends State<_DevLauncher> {
       );
       return;
     }
-    final id = kIsWeb ? int.tryParse(Uri.base.queryParameters['level'] ?? '') : null;
-    if (id != null) {
-      Services.levels.load(id).then((l) => setState(() => _level = l));
-      return;
-    }
-    rootBundle.loadString('assets/levels/sandbox.json').then((t) {
-      setState(() => _level = LevelDef.parse(t));
-    });
+    final id = int.tryParse(q['level'] ?? '') ?? 1;
+    Services.levels.load(id).then((l) => setState(() => _level = l));
   }
 
   @override

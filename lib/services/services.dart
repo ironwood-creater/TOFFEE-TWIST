@@ -1,10 +1,13 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../levels/level_repository.dart';
+import 'ads_service.dart';
 import 'audio_service.dart';
 import 'haptics.dart';
+import 'iap_service.dart';
 import 'progress_service.dart';
 
+export 'ads_service.dart' show RewardedPurpose;
 export 'audio_service.dart' show Sfx;
 export 'progress_service.dart' show Booster, Reward;
 
@@ -14,6 +17,8 @@ abstract final class Services {
   static late AudioService audio;
   static late Haptics haptics;
   static late LevelRepository levels;
+  static AdsService ads = NoAdsService();
+  static IapService iap = NoIapService(placeholderProducts());
 
   static bool _ready = false;
   static bool get ready => _ready;
