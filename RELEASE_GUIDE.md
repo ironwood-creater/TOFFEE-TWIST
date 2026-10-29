@@ -108,13 +108,13 @@ build/app/outputs/bundle/release/app-release.aab
 If the build says it is signed with the debug key, `android/key.properties`
 is missing - redo Step 6.
 
-**No Android Studio? Let GitHub build it.** Once the code is on GitHub, open
-the repository's **Actions** tab > **Build Android app** > **Run workflow**.
-About 15 minutes later, open the finished run and download
-`toffee-twist-android` (it holds `app-release.apk` for your phone and
-`app-release.aab` for Google Play). To have the `.aab` signed with your upload
-key, add the two secrets described at the top of
-`.github/workflows/build-android.yml`.
+**No Android Studio? Let GitHub build it.** Every push to GitHub builds the
+game automatically (or start it yourself: **Actions** tab > **Build Android
+app** > **Run workflow**). About 15 minutes later the repository's
+**Releases** page has a **Latest build** with `toffee-twist.apk` (open it on
+your phone to install) and `toffee-twist.aab` (for Google Play). To have the
+`.aab` signed with your upload key, add the two secrets described at the top
+of `.github/workflows/build-android.yml`.
 
 ## Step 8 - Upload to Google Play
 

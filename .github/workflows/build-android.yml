@@ -1,10 +1,10 @@
 # Builds the Android app on GitHub's computers, so you don't need Android Studio.
 #
-# How to use: on GitHub open the "Actions" tab > "Build Android app" >
-# "Run workflow". After about 10-15 minutes, open the finished run and download
-# "toffee-twist-android" at the bottom of the page. It contains:
-#   app-release.apk  - install this on your phone to play
-#   app-release.aab  - upload this to Google Play
+# It runs by itself after every push (and from the "Actions" tab >
+# "Build Android app" > "Run workflow"). After about 15 minutes the files
+# appear on the repository's "Releases" page under "Latest build":
+#   toffee-twist.apk  - open this on your Android phone to install and play
+#   toffee-twist.aab  - the bundle for Google Play
 #
 # Without the secrets below, both files are signed with a debug key. The APK
 # still installs on a phone, but Google Play only accepts an .aab signed with
@@ -18,7 +18,10 @@ name: Build Android app
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    paths-ignore: ['**.md', 'docs/**', 'store_assets/**']
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -66,3 +69,21 @@ jobs:
           path: |
             build/app/outputs/flutter-apk/app-release.apk
             build/app/outputs/bundle/release/app-release.aab
+
+      - name: Publish to the "Latest build" release
+        if: github.ref_name == github.event.repository.default_branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          cp build/app/outputs/flutter-apk/app-release.apk toffee-twist.apk
+          cp build/app/outputs/bundle/release/app-release.aab toffee-twist.aab
+          if [ -f android/key.properties ]; then
+            SIGNING="The .aab is signed with your upload key and can be uploaded to Google Play."
+          else
+            SIGNING="Signed with a debug key: the .apk installs on a phone, but Google Play will not accept this .aab (see the top of .github/workflows/build-android.yml)."
+          fi
+          gh release delete latest-build --yes --cleanup-tag || true
+          gh release create latest-build toffee-twist.apk toffee-twist.aab \
+            --target "$GITHUB_SHA" --prerelease --title "Latest build" \
+            --notes "Built automatically from commit $GITHUB_SHA. $SIGNING"
