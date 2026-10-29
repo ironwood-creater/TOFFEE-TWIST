@@ -39,6 +39,14 @@ class GameScreen extends StatefulWidget {
   final GameAdHooks ads;
   final int? seed;
 
+  /// The most recent session (lets widget tests look inside).
+  @visibleForTesting
+  static GameSession? debugLastSession;
+
+  /// The most recent Flame game (for widget tests).
+  @visibleForTesting
+  static TwistGame? debugLastGame;
+
   @override
   State<GameScreen> createState() => _GameScreenState();
 }
@@ -63,6 +71,8 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
       consumeBooster: progress.useBooster,
     )..onFinished = _onFinished;
     game = TwistGame(session: session, pixelRatio: ratio);
+    GameScreen.debugLastSession = session;
+    GameScreen.debugLastGame = game;
     WidgetsBinding.instance.addPostFrameCallback((_) => _start());
   }
 

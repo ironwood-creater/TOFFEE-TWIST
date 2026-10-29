@@ -93,8 +93,12 @@ class BoardComponent extends PositionComponent with DragCallbacks, TapCallbacks
       s.size = Vector2.all(tile);
     }
     _bgDirty = true;
-    _syncAll();
+    // While a move is animating, the engine is already at the end state; the
+    // board re-syncs itself when the animations finish.
+    if (!_playing) _syncAll();
   }
+
+  bool _playing = false;
 
   SpriteCache get sprites => _sprites!;
 
@@ -392,7 +396,9 @@ class BoardComponent extends PositionComponent with DragCallbacks, TapCallbacks
   Future<void> play(List<BoardEvent> events) async {
     resetIdle();
     _select(-1);
+    _playing = true;
     for (final e in events) {
+      debugStage = e.runtimeType.toString();
       switch (e) {
         case SwapEvent():
           await _playSwap(e);
@@ -410,9 +416,14 @@ class BoardComponent extends PositionComponent with DragCallbacks, TapCallbacks
           await _playBooster(e);
       }
     }
+    debugStage = 'done';
+    _playing = false;
     _syncAll();
     _idle = 0;
   }
+
+  /// Which event is playing (for tests).
+  String debugStage = '';
 
   Future<void> _playSwap(SwapEvent e) async {
     final sa = _cells[e.a];
@@ -705,6 +716,7 @@ class BoardComponent extends PositionComponent with DragCallbacks, TapCallbacks
   /// Sweet Finale: every unused move becomes bonus points with fireworks.
   @override
   Future<void> playFinale(int moves) async {
+    _playing = true;
     fx.banner((size / 2).toOffset(), 'Sweet Finale!', size: 42);
     Services.audio.play(Sfx.win);
     await wait(0.7);
@@ -728,5 +740,6 @@ class BoardComponent extends PositionComponent with DragCallbacks, TapCallbacks
       await wait(step);
     }
     await wait(0.5);
+    _playing = false;
   }
 }
