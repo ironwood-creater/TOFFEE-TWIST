@@ -409,7 +409,10 @@ Future<T?> showPopup<T>(BuildContext context, Widget child, {bool dismissible = 
     barrierLabel: 'Close',
     barrierColor: const Color(0x99000000),
     transitionDuration: const Duration(milliseconds: 260),
-    pageBuilder: (context, _, _) => SafeArea(child: Center(child: child)),
+    pageBuilder: (context, _, _) => Material(
+      type: MaterialType.transparency,
+      child: SafeArea(child: Center(child: SingleChildScrollView(child: child))),
+    ),
     transitionBuilder: (context, anim, _, child) => ScaleTransition(
       scale: CurvedAnimation(parent: anim, curve: Curves.easeOutBack),
       child: FadeTransition(opacity: anim, child: child),

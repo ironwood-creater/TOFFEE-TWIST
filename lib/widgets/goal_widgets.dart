@@ -91,10 +91,14 @@ class GoalChip extends StatelessWidget {
           AnimatedSwitcher(
             duration: const Duration(milliseconds: 180),
             transitionBuilder: (child, a) => ScaleTransition(scale: a, child: child),
-            child: Text(
-              done ? '' : (goal.type == GoalType.score ? _short(remaining) : '$remaining'),
+            child: FittedBox(
               key: ValueKey(remaining),
-              style: AppText.title(16),
+              fit: BoxFit.scaleDown,
+              child: Text(
+                done ? '' : (goal.type == GoalType.score ? _short(remaining) : '$remaining'),
+                maxLines: 1,
+                style: AppText.title(16),
+              ),
             ),
           ),
         ],

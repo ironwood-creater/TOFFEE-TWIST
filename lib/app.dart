@@ -40,6 +40,18 @@ class _DevLauncherState extends State<_DevLauncher> {
       final s = Uri.base.queryParameters['seed'];
       if (s != null) _seed = int.tryParse(s);
     }
+    final test = kIsWeb ? Uri.base.queryParameters['test'] : null;
+    if (test == 'win' || test == 'lose') {
+      _level = LevelDef(
+        id: 7,
+        moves: test == 'win' ? 12 : 1,
+        colors: const [0, 1, 2, 3, 4],
+        board: List.filled(8, '........'),
+        goals: test == 'win' ? const [GoalDef.score(60)] : const [GoalDef.collect(2, 40), GoalDef.collect(4, 30)],
+        stars: const [60, 1500, 3000],
+      );
+      return;
+    }
     rootBundle.loadString('assets/levels/sandbox.json').then((t) {
       setState(() => _level = LevelDef.parse(t));
     });
