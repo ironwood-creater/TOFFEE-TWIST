@@ -96,16 +96,15 @@ void main() {
     await savePng('store_assets/banners/header_1500x500.png', 1500, 500, (c, s) {
       warmBackground(c, s);
       scatterSweets(c, s, const [
-        (0.07, 0.25, 0.30, 1, Special.none),
-        (0.19, 0.76, 0.26, 2, Special.none),
-        (0.81, 0.24, 0.27, 3, Special.none),
-        (0.93, 0.74, 0.30, 5, Special.none),
-        (0.96, 0.18, 0.18, -1, Special.swirl),
-        (0.04, 0.80, 0.18, 4, Special.box),
+        (0.06, 0.25, 0.28, 1, Special.none),
+        (0.15, 0.78, 0.24, 2, Special.none),
+        (0.90, 0.24, 0.24, 3, Special.none),
+        (0.95, 0.76, 0.27, 5, Special.none),
+        (0.03, 0.82, 0.17, 4, Special.box),
       ]);
-      toffee(c, const Offset(480, 245), 290);
-      outlinedText(c, 'Toffee Twist', const Offset(860, 215), 118);
-      pill(c, 'Sweet Match 3', const Offset(860, 345), 44);
+      toffee(c, const Offset(375, 245), 280);
+      outlinedText(c, 'Toffee Twist', const Offset(900, 215), 118);
+      pill(c, 'Sweet Match 3', const Offset(900, 345), 44);
     });
 
     // Vertical story (Instagram / TikTok / WhatsApp status): 1080 x 1920.
