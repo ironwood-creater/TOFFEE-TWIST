@@ -1,0 +1,35 @@
+{
+  "id": 180,
+  "kind": "hard",
+  "moves": 31,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop",
+    "chocolate"
+  ],
+  "goals": [
+    {
+      "type": "nuts",
+      "count": 2,
+      "maxOnBoard": 1
+    },
+    {
+      "type": "caramel"
+    }
+  ],
+  "stars": [8500, 21000, 26000],
+  "board": [
+    "....n....",
+    ".ccccccc.",
+    ".cCCCCCc.",
+    ".cCCCCCc.",
+    ".cCCCCCc.",
+    ".cCCCCCc.",
+    ".cCCCCCc.",
+    ".ccccccc."
+  ],
+  "seed": 823087300
+}

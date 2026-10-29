@@ -1,0 +1,36 @@
+{
+  "id": 170,
+  "kind": "hard",
+  "moves": 19,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop",
+    "chocolate"
+  ],
+  "goals": [
+    {
+      "type": "crates"
+    },
+    {
+      "type": "collect",
+      "sweet": "cupcake",
+      "count": 22
+    }
+  ],
+  "stars": [2600, 7500, 10000],
+  "board": [
+    "###...###",
+    "##.....##",
+    "#.3...3.#",
+    ".#.....#.",
+    ".........",
+    ".........",
+    "#..222..#",
+    "##.....##",
+    "###...###"
+  ],
+  "seed": 894829354
+}

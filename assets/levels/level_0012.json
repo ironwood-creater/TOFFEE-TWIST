@@ -1,0 +1,41 @@
+{
+  "id": 12,
+  "kind": "tutorial",
+  "moves": 19,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop"
+  ],
+  "goals": [
+    {
+      "type": "collect",
+      "sweet": "toffee",
+      "count": 40
+    },
+    {
+      "type": "collect",
+      "sweet": "donut",
+      "count": 40
+    }
+  ],
+  "stars": [5500, 16500, 22000],
+  "board": [
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    "........."
+  ],
+  "tutorial": {
+    "id": "boosters",
+    "title": "Boosters",
+    "text": "Stuck? Tap the Rolling Pin to smash one piece, or Free Swap to swap any two neighbours. They use no moves!"
+  }
+}

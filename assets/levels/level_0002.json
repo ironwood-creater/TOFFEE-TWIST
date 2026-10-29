@@ -1,0 +1,33 @@
+{
+  "id": 2,
+  "kind": "tutorial",
+  "moves": 12,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron"
+  ],
+  "goals": [
+    {
+      "type": "collect",
+      "sweet": "donut",
+      "count": 30
+    }
+  ],
+  "stars": [3200, 11000, 17500],
+  "board": [
+    ".......",
+    ".......",
+    ".......",
+    ".......",
+    ".......",
+    ".......",
+    "......."
+  ],
+  "tutorial": {
+    "id": "collect",
+    "title": "Level goals",
+    "text": "Goals are shown at the top. Collect the sweets shown before you run out of moves!"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": 10,
+  "kind": "tutorial",
+  "moves": 9,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron"
+  ],
+  "goals": [
+    {
+      "type": "caramel"
+    },
+    {
+      "type": "collect",
+      "sweet": "toffee",
+      "count": 25
+    }
+  ],
+  "stars": [4700, 19000, 25000],
+  "board": [
+    "........",
+    ".cccccc.",
+    ".cccccc.",
+    ".cccccc.",
+    ".cccccc.",
+    ".cccccc.",
+    ".cccccc.",
+    "........"
+  ],
+  "tutorial": {
+    "id": "caramel",
+    "title": "Caramel tiles",
+    "text": "Caramel hides under some sweets. Make matches on top of it to clear it!"
+  }
+}

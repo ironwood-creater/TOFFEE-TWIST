@@ -1,0 +1,62 @@
+{
+  "id": 24,
+  "kind": "tutorial",
+  "moves": 19,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop"
+  ],
+  "goals": [
+    {
+      "type": "score",
+      "target": 18000
+    },
+    {
+      "type": "collect",
+      "sweet": "cupcake",
+      "count": 45
+    }
+  ],
+  "stars": [18000, 22000, 24000],
+  "board": [
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    "........."
+  ],
+  "preset": [
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    "....k....",
+    ".........",
+    ".........",
+    ".........",
+    "........."
+  ],
+  "presetSpecials": [
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    "...s-....",
+    ".........",
+    ".........",
+    ".........",
+    "........."
+  ],
+  "tutorial": {
+    "id": "combo2",
+    "title": "Swirl power",
+    "text": "Swap a Toffee Swirl with a Striped Toffee: every sweet of that kind turns striped and fires!"
+  }
+}

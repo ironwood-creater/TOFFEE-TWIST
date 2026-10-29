@@ -1,0 +1,32 @@
+{
+  "id": 20,
+  "kind": "hard",
+  "moves": 27,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop"
+  ],
+  "goals": [
+    {
+      "type": "caramel"
+    },
+    {
+      "type": "crates"
+    }
+  ],
+  "stars": [7000, 16000, 20000],
+  "board": [
+    "ccccccccc",
+    "ccccccccc",
+    "#.......#",
+    "##.....##",
+    "###333###",
+    "##.....##",
+    "#.......#",
+    "ccccccccc",
+    "ccccccccc"
+  ]
+}

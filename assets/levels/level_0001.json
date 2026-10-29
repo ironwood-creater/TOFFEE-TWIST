@@ -1,0 +1,41 @@
+{
+  "id": 1,
+  "kind": "tutorial",
+  "moves": 11,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron"
+  ],
+  "goals": [
+    {
+      "type": "score",
+      "target": 8000
+    }
+  ],
+  "stars": [8000, 10000, 14500],
+  "board": [
+    "#.....#",
+    ".......",
+    ".......",
+    ".......",
+    ".......",
+    ".......",
+    "#.....#"
+  ],
+  "preset": [
+    ".......",
+    ".......",
+    "....d..",
+    "..ddt..",
+    ".......",
+    ".......",
+    "......."
+  ],
+  "tutorial": {
+    "id": "match3",
+    "title": "Welcome to Toffee Twist!",
+    "text": "Swipe a sweet to swap it with its neighbour. Line up 3 or more of the same sweet to clear them!"
+  }
+}

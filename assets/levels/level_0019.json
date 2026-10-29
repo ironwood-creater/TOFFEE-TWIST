@@ -1,0 +1,34 @@
+{
+  "id": 19,
+  "kind": "tutorial",
+  "moves": 18,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop"
+  ],
+  "goals": [
+    {
+      "type": "caramel"
+    }
+  ],
+  "stars": [7000, 23000, 29000],
+  "board": [
+    ".........",
+    ".ccccccc.",
+    ".ccccccc.",
+    ".ccCCCcc.",
+    ".ccCCCcc.",
+    ".ccCCCcc.",
+    ".ccccccc.",
+    ".ccccccc.",
+    "........."
+  ],
+  "tutorial": {
+    "id": "caramel2",
+    "title": "Dark caramel",
+    "text": "Dark caramel has two layers - it needs two matches on top to clear."
+  }
+}

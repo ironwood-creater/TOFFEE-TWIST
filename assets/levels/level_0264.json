@@ -1,0 +1,36 @@
+{
+  "id": 264,
+  "kind": "normal",
+  "moves": 20,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop",
+    "chocolate"
+  ],
+  "goals": [
+    {
+      "type": "caramel"
+    },
+    {
+      "type": "collect",
+      "sweet": "macaron",
+      "count": 20
+    }
+  ],
+  "stars": [3400, 9000, 10500],
+  "board": [
+    "###...###",
+    "##.....##",
+    "#.ccccc.#",
+    "..ccccc..",
+    "..ccccc..",
+    "..ccccc..",
+    "#.ccccc.#",
+    "##.....##",
+    "###...###"
+  ],
+  "seed": 971758521
+}

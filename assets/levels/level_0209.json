@@ -1,0 +1,33 @@
+{
+  "id": 209,
+  "kind": "normal",
+  "moves": 24,
+  "sweets": [
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop",
+    "chocolate"
+  ],
+  "goals": [
+    {
+      "type": "caramel"
+    },
+    {
+      "type": "crates"
+    }
+  ],
+  "stars": [5000, 16500, 21000],
+  "board": [
+    "##c...c##",
+    "#cc1.1cc#",
+    "ccc...ccc",
+    ".#.....#.",
+    ".........",
+    "#.......#",
+    "ccc1.1ccc",
+    "#cc...cc#",
+    "##c...c##"
+  ],
+  "seed": 2103038137
+}

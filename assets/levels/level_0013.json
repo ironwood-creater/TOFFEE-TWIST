@@ -1,0 +1,38 @@
+{
+  "id": 13,
+  "kind": "tutorial",
+  "moves": 15,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop"
+  ],
+  "goals": [
+    {
+      "type": "crates"
+    },
+    {
+      "type": "collect",
+      "sweet": "cupcake",
+      "count": 20
+    }
+  ],
+  "stars": [3100, 8500, 11500],
+  "board": [
+    "........",
+    "........",
+    "........",
+    ".111111.",
+    "........",
+    ".111111.",
+    "........",
+    "........"
+  ],
+  "tutorial": {
+    "id": "crate",
+    "title": "Wooden crates",
+    "text": "Crates block the way. Make matches right next to them to break them!"
+  }
+}

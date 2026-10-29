@@ -1,0 +1,35 @@
+{
+  "id": 16,
+  "kind": "tutorial",
+  "moves": 24,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop"
+  ],
+  "goals": [
+    {
+      "type": "nuts",
+      "count": 2,
+      "maxOnBoard": 2
+    }
+  ],
+  "stars": [4100, 14000, 19500],
+  "board": [
+    "..n..n..",
+    "........",
+    "........",
+    "........",
+    "........",
+    "........",
+    "........",
+    "........"
+  ],
+  "tutorial": {
+    "id": "nut",
+    "title": "Golden nuts",
+    "text": "Bring the golden nuts down to the bottom row. Clear the sweets underneath them!"
+  }
+}

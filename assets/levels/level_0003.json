@@ -1,0 +1,34 @@
+{
+  "id": 3,
+  "kind": "tutorial",
+  "moves": 13,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron"
+  ],
+  "goals": [
+    {
+      "type": "collect",
+      "sweet": "cupcake",
+      "count": 45
+    },
+    {
+      "type": "collect",
+      "sweet": "macaron",
+      "count": 45
+    }
+  ],
+  "stars": [6500, 20000, 28000],
+  "board": [
+    ".......",
+    ".......",
+    ".......",
+    ".......",
+    ".......",
+    ".......",
+    ".......",
+    "......."
+  ]
+}

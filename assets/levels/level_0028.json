@@ -1,0 +1,34 @@
+{
+  "id": 28,
+  "kind": "tutorial",
+  "moves": 28,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop"
+  ],
+  "goals": [
+    {
+      "type": "nuts",
+      "count": 3,
+      "maxOnBoard": 2
+    },
+    {
+      "type": "crates"
+    }
+  ],
+  "stars": [6500, 18500, 25000],
+  "board": [
+    "##.n.n.##",
+    "##.....##",
+    ".........",
+    "1.......1",
+    ".........",
+    "1.......1",
+    ".........",
+    "##.....##",
+    "##.....##"
+  ]
+}

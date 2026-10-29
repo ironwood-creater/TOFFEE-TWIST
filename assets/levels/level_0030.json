@@ -1,0 +1,37 @@
+{
+  "id": 30,
+  "kind": "hard",
+  "moves": 22,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop"
+  ],
+  "goals": [
+    {
+      "type": "caramel"
+    },
+    {
+      "type": "crates"
+    },
+    {
+      "type": "nuts",
+      "count": 2,
+      "maxOnBoard": 1
+    }
+  ],
+  "stars": [11500, 30000, 38000],
+  "board": [
+    "....n....",
+    ".........",
+    ".........",
+    ".2..3..2.",
+    ".........",
+    ".........",
+    "ccccccccc",
+    "ccCCCCCcc",
+    "ccCCCCCcc"
+  ]
+}

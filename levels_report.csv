@@ -1,0 +1,501 @@
+level,kind,shop,goals,goal_types,sweets,board,cells,caramel_tiles,crates,moves,bot_win_rate_pct,verify_win_rate_pct,avg_moves_to_win,star1,star2,star3,target_band,in_band
+1,tutorial,"Toffee Kitchen","score 8000",score,4,7x7,45,0,0,11,98,100,5.9,8000,10000,14500,tutorial (easy),yes
+2,tutorial,"Toffee Kitchen","collect 30 donut",collect,4,7x7,49,0,0,12,98,100,6.3,3200,11000,17500,tutorial (easy),yes
+3,tutorial,"Toffee Kitchen","collect 45 cupcake + collect 45 macaron",collect,4,8x7,56,0,0,13,96,98,7.1,6500,20000,28000,tutorial (easy),yes
+4,tutorial,"Toffee Kitchen","collect 60 toffee",collect,4,8x8,64,0,0,13,98,94,7.0,7500,22000,31000,tutorial (easy),yes
+5,tutorial,"Toffee Kitchen","score 8000 + collect 25 lollipop",score+collect,5,8x8,60,0,0,20,94,100,10.9,8000,11500,15500,tutorial (easy),yes
+6,tutorial,"Toffee Kitchen","collect 60 donut",collect,4,8x8,64,0,0,11,96,92,6.5,7000,24000,39000,tutorial (easy),yes
+7,tutorial,"Toffee Kitchen","collect 25 toffee + collect 25 cupcake + collect 25 macaron",collect,5,9x9,69,0,0,15,94,90,10.0,3700,10000,16000,tutorial (easy),yes
+8,tutorial,"Toffee Kitchen","score 12000",score,5,8x8,64,0,0,19,98,94,9.7,12000,15500,18000,tutorial (easy),yes
+9,tutorial,"Toffee Kitchen","collect 35 lollipop + collect 35 donut",collect,5,8x8,60,0,0,20,94,94,13.8,5500,13500,17000,tutorial (easy),yes
+10,tutorial,"Toffee Kitchen","caramel + collect 25 toffee",caramel+collect,4,8x8,64,36,0,9,92,82,5.5,4700,19000,25000,tutorial (easy),yes
+11,tutorial,"Toffee Kitchen","caramel + collect 25 macaron",caramel+collect,5,9x9,77,21,0,15,90,82,10.1,4700,13000,19500,tutorial (easy),yes
+12,tutorial,"Toffee Kitchen","collect 40 toffee + collect 40 donut",collect,5,9x9,81,0,0,19,90,82,13.1,5500,16500,22000,tutorial (easy),yes
+13,tutorial,"Toffee Kitchen","crates + collect 20 cupcake",crates+collect,5,8x8,64,0,12,15,98,100,9.0,3100,8500,11500,tutorial (easy),yes
+14,tutorial,"Toffee Kitchen","crates + collect 35 cupcake",crates+collect,5,9x9,69,0,11,15,90,68,10.6,4200,13000,17000,tutorial (easy),yes
+15,tutorial,"Toffee Kitchen","caramel + crates",caramel+crates,5,9x9,81,32,3,24,86,84,15.9,5500,21000,30000,tutorial (easy),yes
+16,tutorial,"Toffee Kitchen","nuts 2",nuts,5,8x8,64,0,0,24,92,98,12.4,4100,14000,19500,tutorial (easy),yes
+17,tutorial,"Toffee Kitchen","nuts 2 + collect 18 lollipop",nuts+collect,5,9x9,77,0,0,25,86,90,14.4,5000,17000,23000,tutorial (easy),yes
+18,tutorial,"Toffee Kitchen","collect 35 donut + collect 35 macaron",collect,5,9x9,57,0,0,21,88,94,15.3,4800,14000,16500,tutorial (easy),yes
+19,tutorial,"Toffee Kitchen","caramel",caramel,5,9x9,81,49,0,18,86,86,12.4,7000,23000,29000,tutorial (easy),yes
+20,hard,"Toffee Kitchen","caramel + crates",caramel+crates,5,9x9,63,36,3,27,44,44,20.5,7000,16000,20000,30-50%,yes
+21,relief,"Cupcake Café","score 30000",score,4,8x8,64,0,0,12,80,86,7.1,30000,36000,44000,60-85%,yes
+22,tutorial,"Cupcake Café","crates + collect 30 toffee",crates+collect,5,9x9,75,0,5,22,94,90,15.6,3300,11500,15000,tutorial (easy),yes
+23,tutorial,"Cupcake Café","nuts 2",nuts,5,9x9,75,0,0,31,82,82,18.3,6000,17000,24000,tutorial (easy),yes
+24,tutorial,"Cupcake Café","score 18000 + collect 45 cupcake",score+collect,5,9x9,81,0,0,19,86,86,11.7,18000,22000,24000,tutorial (easy),yes
+25,tutorial,"Cupcake Café","score 6000",score,6,9x9,69,0,0,17,88,78,11.8,6000,7500,9000,tutorial (easy),yes
+26,tutorial,"Cupcake Café","caramel + nuts 2",caramel+nuts,5,9x9,77,21,0,24,80,82,15.0,7500,24000,30000,tutorial (easy),yes
+27,tutorial,"Cupcake Café","caramel + crates + collect 30 donut",caramel+crates+collect,5,8x9,47,21,3,21,80,86,15.1,4400,11500,14500,tutorial (easy),yes
+28,tutorial,"Cupcake Café","nuts 3 + crates",nuts+crates,5,9x9,65,0,4,28,80,84,17.9,6500,18500,25000,tutorial (easy),yes
+29,tutorial,"Cupcake Café","caramel",caramel,5,9x9,69,69,0,24,78,68,16.3,8500,23000,28000,tutorial (easy),yes
+30,hard,"Cupcake Café","caramel + crates + nuts 2",caramel+crates+nuts,5,9x9,81,27,3,22,48,46,15.6,11500,30000,38000,30-50%,yes
+31,relief,"Cupcake Café","nuts 1",nuts,5,9x9,61,0,0,12,82,80,6.7,1400,6000,9000,60-85%,yes
+32,normal,"Cupcake Café","caramel + collect 11 donut",caramel+collect,5,9x9,68,16,0,30,82,64,18.3,4500,11000,15000,60-85%,yes
+33,normal,"Cupcake Café","caramel",caramel,4,9x9,75,18,0,14,80,92,9.6,3200,14500,23000,60-85%,yes
+34,normal,"Cupcake Café","caramel + crates",caramel+crates,5,9x9,70,8,2,17,84,88,9.0,2600,7000,10000,60-85%,yes
+35,normal,"Cupcake Café","crates",crates,5,8x9,45,0,2,10,80,88,4.7,1400,3800,5500,60-85%,yes
+36,normal,"Cupcake Café","collect 18 lollipop",collect,5,9x9,70,0,0,13,80,94,7.9,2300,5500,6500,60-85%,yes
+37,normal,"Cupcake Café","caramel + collect 15 macaron",caramel+collect,5,9x9,71,18,0,28,82,88,15.7,5500,13000,19500,60-85%,yes
+38,normal,"Cupcake Café","nuts 1 + caramel",nuts+caramel,5,9x9,55,8,0,19,82,74,10.1,3400,10000,13000,60-85%,yes
+39,normal,"Cupcake Café","nuts 1",nuts,5,8x8,56,0,0,22,82,92,8.2,3400,8500,13000,60-85%,yes
+40,hard,"Cupcake Café","caramel + collect 18 donut",caramel+collect,5,8x9,72,25,0,10,50,42,7.6,5500,14000,17500,30-50%,yes
+41,relief,"Donut Diner","nuts 1",nuts,5,9x9,63,0,0,10,84,74,6.5,1800,5500,8000,60-85%,yes
+42,normal,"Donut Diner","collect 16 chocolate",collect,6,9x9,65,0,0,15,84,86,9.7,1800,5500,7500,60-85%,yes
+43,normal,"Donut Diner","caramel",caramel,4,9x9,72,18,0,12,78,78,9.0,4000,14500,27000,60-85%,yes
+44,normal,"Donut Diner","caramel + crates",caramel+crates,5,8x8,60,16,2,33,82,84,17.9,7000,18000,29000,60-85%,yes
+45,normal,"Donut Diner","caramel",caramel,5,9x9,57,13,0,11,84,90,7.0,2400,6500,9500,60-85%,yes
+46,normal,"Donut Diner","caramel",caramel,5,9x9,67,15,0,35,82,90,20.2,6500,20000,26000,60-85%,yes
+47,normal,"Donut Diner","caramel + collect 15 cupcake",caramel+collect,5,9x9,65,45,0,18,82,64,12.2,6500,14500,19500,60-85%,yes
+48,normal,"Donut Diner","nuts 1 + caramel",nuts+caramel,5,8x8,64,38,0,22,80,94,14.1,6500,17000,22000,60-85%,yes
+49,normal,"Donut Diner","caramel + collect 13 cupcake",caramel+collect,5,9x9,67,35,0,21,80,80,13.0,4500,13500,16000,60-85%,yes
+50,hard,"Donut Diner","caramel + collect 17 donut",caramel+collect,5,9x9,77,25,0,18,44,50,13.3,7000,22000,29000,30-50%,yes
+51,relief,"Donut Diner","caramel",caramel,4,8x8,64,16,0,11,82,88,6.7,3800,18500,30000,60-85%,yes
+52,normal,"Donut Diner","caramel + collect 11 chocolate",caramel+collect,4,9x9,57,45,0,11,80,76,7.5,6000,22000,30000,60-85%,yes
+53,normal,"Donut Diner","caramel",caramel,5,8x9,47,11,0,11,84,84,7.0,1700,6000,8500,60-85%,yes
+54,normal,"Donut Diner","caramel + collect 12 donut",caramel+collect,5,8x9,72,16,0,22,82,86,15.5,3700,17000,22000,60-85%,yes
+55,normal,"Donut Diner","nuts 1 + caramel",nuts+caramel,6,8x9,72,17,0,31,82,66,21.3,5000,12500,15000,60-85%,yes
+56,normal,"Donut Diner","nuts 1 + collect 16 donut",nuts+collect,6,8x9,72,0,0,25,84,78,13.7,3400,8500,11500,60-85%,yes
+57,normal,"Donut Diner","crates",crates,5,9x9,67,0,5,23,82,82,12.0,3600,10500,14000,60-85%,yes
+58,normal,"Donut Diner","caramel",caramel,4,9x9,69,12,0,10,80,90,6.5,2300,14000,29000,60-85%,yes
+59,normal,"Donut Diner","caramel + crates",caramel+crates,5,8x9,47,4,5,18,80,80,10.0,2200,8000,11500,60-85%,yes
+60,hard,"Donut Diner","caramel + crates",caramel+crates,5,9x9,69,25,4,12,48,52,8.9,5000,15000,19500,30-50%,yes
+61,relief,"Macaron Bakery","caramel",caramel,4,9x9,73,39,0,17,84,88,10.0,7000,24000,40000,60-85%,yes
+62,normal,"Macaron Bakery","score 5000",score,5,9x9,71,0,0,12,82,82,8.1,5000,6500,8000,60-85%,yes
+63,normal,"Macaron Bakery","caramel",caramel,4,9x9,67,18,0,15,82,74,10.4,4000,24000,48000,60-85%,yes
+64,normal,"Macaron Bakery","nuts 1 + crates",nuts+crates,5,9x9,77,0,3,11,80,78,6.2,1700,9500,16500,60-85%,yes
+65,normal,"Macaron Bakery","nuts 1 + caramel",nuts+caramel,4,9x9,75,17,0,13,74,86,7.8,4100,17000,28000,60-85%,yes
+66,normal,"Macaron Bakery","nuts 1",nuts,5,8x9,66,0,0,11,82,70,5.8,1800,6000,9000,60-85%,yes
+67,normal,"Macaron Bakery","caramel + collect 12 cupcake",caramel+collect,5,9x9,68,8,0,19,82,82,10.7,2900,7500,10500,60-85%,yes
+68,normal,"Macaron Bakery","nuts 1 + caramel",nuts+caramel,5,9x9,57,8,0,18,80,70,10.0,4000,11000,15500,60-85%,yes
+69,normal,"Macaron Bakery","nuts 1",nuts,5,9x9,72,0,0,18,80,68,8.1,2800,8000,12500,60-85%,yes
+70,hard,"Macaron Bakery","nuts 1 + crates",nuts+crates,6,9x9,68,0,6,34,46,36,26.3,3600,10000,11500,30-50%,yes
+71,relief,"Macaron Bakery","nuts 1",nuts,5,9x9,75,0,0,15,84,92,6.8,1800,8000,12500,60-85%,yes
+72,normal,"Macaron Bakery","nuts 1 + crates",nuts+crates,6,9x9,77,0,4,19,80,64,10.7,2900,7000,11500,60-85%,yes
+73,normal,"Macaron Bakery","caramel",caramel,5,9x9,67,35,0,21,80,90,14.1,4100,13500,16500,60-85%,yes
+74,normal,"Macaron Bakery","nuts 1 + collect 14 chocolate",nuts+collect,5,9x9,59,0,0,15,80,70,9.3,2800,7000,9000,60-85%,yes
+75,normal,"Macaron Bakery","collect 22 cupcake",collect,5,8x8,56,0,0,12,84,84,8.8,2600,7500,12000,60-85%,yes
+76,normal,"Macaron Bakery","caramel",caramel,5,8x8,54,12,0,21,84,92,13.0,3200,9000,12000,60-85%,yes
+77,normal,"Macaron Bakery","nuts 1 + crates",nuts+crates,5,9x9,67,0,3,15,82,92,6.8,2300,5500,9000,60-85%,yes
+78,normal,"Macaron Bakery","nuts 1 + caramel",nuts+caramel,5,9x9,72,6,0,35,80,74,19.1,6000,14000,17000,60-85%,yes
+79,normal,"Macaron Bakery","nuts 1 + crates",nuts+crates,5,9x9,63,0,3,13,82,82,7.5,2200,8500,13500,60-85%,yes
+80,hard,"Macaron Bakery","caramel + collect 21 cupcake",caramel+collect,5,9x9,69,27,0,25,48,34,19.7,8000,22000,27000,30-50%,yes
+81,relief,"Chocolate Factory","caramel",caramel,5,9x9,81,45,0,20,82,88,11.7,6500,18500,26000,60-85%,yes
+82,normal,"Chocolate Factory","caramel + collect 15 cupcake",caramel+collect,5,8x8,60,32,0,38,80,90,23.9,8500,19000,28000,60-85%,yes
+83,normal,"Chocolate Factory","caramel",caramel,5,8x8,64,36,0,24,82,88,16.7,6500,17000,22000,60-85%,yes
+84,normal,"Chocolate Factory","caramel + collect 15 donut",caramel+collect,5,9x9,63,25,0,25,78,80,16.9,5000,13000,18000,60-85%,yes
+85,normal,"Chocolate Factory","crates",crates,5,8x9,47,0,2,14,80,82,8.2,1600,5500,8500,60-85%,yes
+86,normal,"Chocolate Factory","nuts 1 + collect 14 donut",nuts+collect,5,9x9,63,0,0,15,80,88,8.3,3200,8000,10500,60-85%,yes
+87,normal,"Chocolate Factory","score 5500",score,5,9x9,69,0,0,11,84,90,7.0,5500,7500,10500,60-85%,yes
+88,normal,"Chocolate Factory","caramel",caramel,5,9x9,67,31,0,23,82,86,16.6,6000,19000,28000,60-85%,yes
+89,normal,"Chocolate Factory","caramel + crates",caramel+crates,5,9x9,73,23,2,22,84,70,14.7,4100,14000,18000,60-85%,yes
+90,hard,"Chocolate Factory","caramel + crates",caramel+crates,5,9x9,69,25,2,19,44,42,15.9,6000,17000,22000,30-50%,yes
+91,relief,"Chocolate Factory","nuts 1",nuts,5,8x8,64,0,0,13,76,84,6.6,2100,9000,15000,60-85%,yes
+92,normal,"Chocolate Factory","collect 21 chocolate",collect,5,9x9,61,0,0,11,80,80,8.3,1500,6500,9500,60-85%,yes
+93,normal,"Chocolate Factory","caramel",caramel,5,9x9,73,19,0,20,80,84,13.8,3300,10500,13000,60-85%,yes
+94,normal,"Chocolate Factory","nuts 1 + crates",nuts+crates,6,9x9,63,0,2,25,80,76,12.9,3300,8000,10000,60-85%,yes
+95,normal,"Chocolate Factory","nuts 1 + caramel",nuts+caramel,5,8x8,60,22,0,26,84,86,14.5,6000,15500,21000,60-85%,yes
+96,normal,"Chocolate Factory","caramel",caramel,5,8x9,70,25,0,13,84,86,9.2,3300,13500,17000,60-85%,yes
+97,normal,"Chocolate Factory","score 5500",score,5,9x9,69,0,0,10,84,92,5.9,5500,7500,9500,60-85%,yes
+98,normal,"Chocolate Factory","caramel",caramel,5,9x9,73,25,0,34,80,90,20.3,7000,17000,21000,60-85%,yes
+99,normal,"Chocolate Factory","nuts 1 + collect 14 chocolate",nuts+collect,5,9x9,63,0,0,14,80,74,8.7,2600,8000,10000,60-85%,yes
+100,hard,"Chocolate Factory","nuts 1 + crates",nuts+crates,5,9x9,72,0,2,13,48,48,8.8,2000,6000,8000,30-50%,yes
+101,relief,"Lollipop Lane","nuts 1",nuts,5,8x9,47,0,0,11,84,86,5.7,1600,5000,6500,60-85%,yes
+102,normal,"Lollipop Lane","crates",crates,5,9x9,68,0,4,26,80,78,17.5,3900,9500,12000,60-85%,yes
+103,normal,"Lollipop Lane","caramel",caramel,4,8x8,58,22,0,10,84,80,6.3,3900,18500,26000,60-85%,yes
+104,normal,"Lollipop Lane","nuts 1 + crates",nuts+crates,5,9x9,69,0,4,18,82,94,9.8,3000,8500,11500,60-85%,yes
+105,normal,"Lollipop Lane","caramel",caramel,5,8x8,60,22,0,17,80,82,10.9,2900,9000,14000,60-85%,yes
+106,normal,"Lollipop Lane","collect 20 chocolate",collect,5,9x9,67,0,0,11,82,82,8.0,1800,6000,8500,60-85%,yes
+107,normal,"Lollipop Lane","nuts 1 + crates",nuts+crates,5,8x9,47,0,4,14,82,86,7.6,1900,5500,7500,60-85%,yes
+108,normal,"Lollipop Lane","crates + collect 14 cupcake",crates+collect,5,9x9,57,0,4,10,80,94,6.5,1200,6500,9000,60-85%,yes
+109,normal,"Lollipop Lane","nuts 1 + crates",nuts+crates,5,9x9,75,0,3,12,78,66,8.4,2800,10000,14000,60-85%,yes
+110,hard,"Lollipop Lane","caramel + collect 21 lollipop",caramel+collect,5,8x8,56,20,0,19,48,42,14.9,6000,15500,21000,30-50%,yes
+111,relief,"Lollipop Lane","nuts 1",nuts,5,9x9,57,0,0,21,84,88,8.5,3100,8500,14000,60-85%,yes
+112,normal,"Lollipop Lane","caramel + crates",caramel+crates,5,8x8,64,25,1,11,82,62,7.6,3200,11000,13500,60-85%,yes
+113,normal,"Lollipop Lane","caramel",caramel,6,9x9,57,16,0,15,80,74,10.6,2400,6000,8500,60-85%,yes
+114,normal,"Lollipop Lane","caramel + collect 17 lollipop",caramel+collect,5,9x9,67,35,0,22,84,78,14.3,4900,14000,20000,60-85%,yes
+115,normal,"Lollipop Lane","nuts 1 + caramel",nuts+caramel,5,9x9,55,21,0,20,82,76,13.6,4800,12000,16000,60-85%,yes
+116,normal,"Lollipop Lane","nuts 2",nuts,5,8x8,58,0,0,24,80,92,12.7,4000,13000,16500,60-85%,yes
+117,normal,"Lollipop Lane","nuts 1 + crates",nuts+crates,5,9x9,61,0,3,13,82,82,7.9,2400,8000,10000,60-85%,yes
+118,normal,"Lollipop Lane","caramel",caramel,4,9x9,67,14,0,22,82,78,13.5,13000,35000,60000,60-85%,yes
+119,normal,"Lollipop Lane","caramel + crates",caramel+crates,5,9x9,75,36,2,26,80,72,18.8,5500,17500,21000,60-85%,yes
+120,hard,"Lollipop Lane","nuts 1 + caramel",nuts+caramel,5,9x9,65,29,0,17,46,42,13.7,6500,16000,25000,30-50%,yes
+121,relief,"Caramel Creek","caramel",caramel,5,9x9,77,12,0,19,84,82,12.7,3100,15500,21000,60-85%,yes
+122,normal,"Caramel Creek","collect 21 macaron",collect,5,9x9,67,0,0,10,78,80,7.3,1400,6500,10000,60-85%,yes
+123,normal,"Caramel Creek","nuts 1 + caramel",nuts+caramel,5,8x9,47,18,0,33,80,84,20.1,5000,14500,16500,60-85%,yes
+124,normal,"Caramel Creek","nuts 1 + crates",nuts+crates,5,9x9,69,0,4,16,82,90,9.9,2600,8000,14000,60-85%,yes
+125,normal,"Caramel Creek","score 6500",score,5,9x9,72,0,0,19,84,82,12.8,6500,8500,10000,60-85%,yes
+126,normal,"Caramel Creek","nuts 2",nuts,5,9x9,61,0,0,25,80,72,15.2,5500,14000,21000,60-85%,yes
+127,normal,"Caramel Creek","score 6500",score,5,9x9,75,0,0,13,80,68,8.7,6500,8500,11000,60-85%,yes
+128,normal,"Caramel Creek","caramel",caramel,5,8x9,72,27,0,29,78,92,17.7,8000,23000,32000,60-85%,yes
+129,normal,"Caramel Creek","nuts 2",nuts,5,9x9,72,0,0,32,82,70,17.2,5500,17000,21000,60-85%,yes
+130,hard,"Caramel Creek","nuts 1 + crates",nuts+crates,5,9x9,69,0,7,16,46,56,11.5,3800,10000,16500,30-50%,yes
+131,relief,"Caramel Creek","nuts 1",nuts,5,9x9,77,0,0,13,84,78,6.9,2400,8500,16500,60-85%,yes
+132,normal,"Caramel Creek","caramel + crates",caramel+crates,5,9x9,69,21,2,12,72,64,8.9,2800,7500,10000,60-85%,yes
+133,normal,"Caramel Creek","caramel",caramel,5,8x9,72,36,0,26,80,92,16.5,7000,18500,25000,60-85%,yes
+134,normal,"Caramel Creek","caramel + crates",caramel+crates,6,9x9,67,21,2,33,80,78,21.3,5500,11500,15000,60-85%,yes
+135,normal,"Caramel Creek","caramel",caramel,5,8x9,47,18,0,28,80,72,17.5,5500,13000,16500,60-85%,yes
+136,normal,"Caramel Creek","caramel",caramel,5,9x9,63,25,0,12,84,78,8.8,4200,11000,18500,60-85%,yes
+137,normal,"Caramel Creek","nuts 1 + crates",nuts+crates,5,9x9,61,0,5,13,78,62,7.4,2000,6500,8000,60-85%,yes
+138,normal,"Caramel Creek","caramel",caramel,5,8x9,47,23,0,16,80,88,10.3,3600,9500,13000,60-85%,yes
+139,normal,"Caramel Creek","caramel + crates",caramel+crates,5,9x9,69,21,1,24,80,84,16.3,6500,21000,29000,60-85%,yes
+140,hard,"Caramel Creek","caramel + collect 21 lollipop",caramel+collect,6,9x9,57,24,0,38,46,58,30.0,7000,18000,22000,30-50%,yes
+141,relief,"Honey Hollow","nuts 1",nuts,5,9x9,72,0,0,21,82,78,10.5,3200,9000,11500,60-85%,yes
+142,normal,"Honey Hollow","caramel + collect 15 toffee",caramel+collect,5,8x9,72,27,0,19,82,80,11.4,4400,14000,21000,60-85%,yes
+143,normal,"Honey Hollow","nuts 1 + caramel",nuts+caramel,5,9x9,67,16,0,17,80,90,10.1,3800,11500,16000,60-85%,yes
+144,normal,"Honey Hollow","nuts 2",nuts,5,9x9,69,0,0,41,78,90,22.6,7000,19000,23000,60-85%,yes
+145,normal,"Honey Hollow","crates",crates,6,9x9,72,0,3,20,80,78,11.7,2500,6000,8000,60-85%,yes
+146,normal,"Honey Hollow","nuts 2",nuts,5,9x9,77,0,0,20,78,82,11.3,4500,19000,25000,60-85%,yes
+147,normal,"Honey Hollow","collect 26 cupcake",collect,5,9x9,67,0,0,13,82,82,9.1,1800,8000,11500,60-85%,yes
+148,normal,"Honey Hollow","caramel",caramel,5,9x9,67,22,0,18,78,72,12.6,3800,11500,14500,60-85%,yes
+149,normal,"Honey Hollow","caramel + crates",caramel+crates,5,9x9,75,23,4,25,78,80,14.6,5500,14500,19000,60-85%,yes
+150,hard,"Honey Hollow","caramel + crates",caramel+crates,5,9x9,81,73,2,20,48,52,16.0,9500,30000,42000,30-50%,yes
+151,relief,"Honey Hollow","nuts 1",nuts,5,9x9,57,0,0,13,80,72,7.7,2000,7500,11500,60-85%,yes
+152,normal,"Honey Hollow","nuts 1 + crates",nuts+crates,5,9x9,67,0,4,15,78,84,9.2,2400,7500,14000,60-85%,yes
+153,normal,"Honey Hollow","caramel",caramel,5,9x9,69,25,0,13,84,92,9.5,4100,12000,17500,60-85%,yes
+154,normal,"Honey Hollow","nuts 1 + crates",nuts+crates,5,9x9,67,0,1,15,80,88,7.3,2300,6500,11000,60-85%,yes
+155,normal,"Honey Hollow","score 7000",score,5,9x9,75,0,0,11,80,80,6.4,7000,9500,10500,60-85%,yes
+156,normal,"Honey Hollow","nuts 2",nuts,5,8x8,64,0,0,19,82,88,11.3,4000,13000,20000,60-85%,yes
+157,normal,"Honey Hollow","caramel + collect 17 donut",caramel+collect,5,8x9,72,27,0,20,78,90,12.6,4800,16500,20000,60-85%,yes
+158,normal,"Honey Hollow","collect 22 donut",collect,5,8x9,47,0,0,14,78,88,9.6,2200,7000,9500,60-85%,yes
+159,normal,"Honey Hollow","caramel + collect 18 cupcake",caramel+collect,5,9x9,69,25,0,11,76,76,8.4,3600,10500,14000,60-85%,yes
+160,hard,"Honey Hollow","nuts 2 + crates",nuts+crates,5,9x9,69,0,5,21,46,50,16.1,6500,14000,19500,30-50%,yes
+161,relief,"Butterscotch Bay","nuts 2",nuts,4,9x9,63,0,0,11,76,80,7.1,5000,23000,31000,60-85%,yes
+162,normal,"Butterscotch Bay","caramel + crates",caramel+crates,5,9x9,65,20,2,22,78,74,14.6,5500,16500,22000,60-85%,yes
+163,normal,"Butterscotch Bay","crates + collect 16 chocolate",crates+collect,6,9x9,65,0,4,17,80,88,11.2,1900,6500,9000,60-85%,yes
+164,normal,"Butterscotch Bay","caramel + crates",caramel+crates,5,9x9,53,16,1,12,82,96,8.3,2000,6500,8500,60-85%,yes
+165,normal,"Butterscotch Bay","collect 21 lollipop",collect,5,9x9,72,0,0,13,80,72,9.6,1700,6000,7500,60-85%,yes
+166,normal,"Butterscotch Bay","nuts 1 + collect 19 chocolate",nuts+collect,5,9x9,72,0,0,32,82,84,15.0,5000,11500,15000,60-85%,yes
+167,normal,"Butterscotch Bay","nuts 1 + crates",nuts+crates,5,9x9,75,0,3,18,78,86,9.4,2500,8000,13000,60-85%,yes
+168,normal,"Butterscotch Bay","crates + collect 19 lollipop",crates+collect,5,9x9,67,0,3,13,80,84,8.4,2400,8500,11000,60-85%,yes
+169,normal,"Butterscotch Bay","nuts 1 + crates",nuts+crates,5,9x9,72,0,4,26,76,76,11.9,3600,9500,13500,60-85%,yes
+170,hard,"Butterscotch Bay","crates + collect 22 cupcake",crates+collect,6,9x9,55,0,5,19,46,52,16.3,2600,7500,10000,30-50%,yes
+171,relief,"Butterscotch Bay","nuts 2",nuts,5,8x9,72,0,0,22,84,80,12.9,6000,17000,27000,60-85%,yes
+172,normal,"Butterscotch Bay","caramel + collect 16 macaron",caramel+collect,5,9x9,69,12,0,14,80,86,9.5,2800,9000,11500,60-85%,yes
+173,normal,"Butterscotch Bay","nuts 1 + caramel",nuts+caramel,5,9x9,69,21,0,20,78,76,13.2,4700,17500,23000,60-85%,yes
+174,normal,"Butterscotch Bay","nuts 2",nuts,5,9x9,77,0,0,25,82,90,14.7,5500,18500,28000,60-85%,yes
+175,normal,"Butterscotch Bay","caramel",caramel,6,9x9,75,27,0,31,78,74,20.9,4600,10500,12500,60-85%,yes
+176,normal,"Butterscotch Bay","nuts 2",nuts,6,9x9,63,0,0,43,78,86,27.0,6500,15000,18500,60-85%,yes
+177,normal,"Butterscotch Bay","nuts 1 + crates",nuts+crates,5,9x9,57,0,3,20,78,88,9.6,3400,9000,15000,60-85%,yes
+178,normal,"Butterscotch Bay","crates + collect 18 donut",crates+collect,5,9x9,63,0,1,10,78,86,7.0,1600,6000,8500,60-85%,yes
+179,normal,"Butterscotch Bay","caramel + crates",caramel+crates,5,9x9,68,22,4,35,76,62,24.4,6500,14500,18000,60-85%,yes
+180,hard,"Butterscotch Bay","nuts 2 + caramel",nuts+caramel,6,8x9,72,49,0,31,44,20,26.3,8500,21000,26000,30-50%,yes
+181,relief,"Praline Plaza","nuts 2",nuts,4,9x9,67,0,0,12,82,76,6.4,2700,15000,22000,60-85%,yes
+182,normal,"Praline Plaza","nuts 1 + crates",nuts+crates,5,9x9,77,0,4,14,78,84,9.3,2900,10500,16000,60-85%,yes
+183,normal,"Praline Plaza","caramel",caramel,5,9x9,69,27,0,30,78,68,21.6,5500,16500,22000,60-85%,yes
+184,normal,"Praline Plaza","nuts 1 + crates",nuts+crates,5,9x9,72,0,3,18,80,80,10.1,2700,8500,12500,60-85%,yes
+185,normal,"Praline Plaza","score 8000",score,5,9x9,63,0,0,16,84,90,10.2,8000,10500,11500,60-85%,yes
+186,normal,"Praline Plaza","collect 19 donut + collect 22 toffee",collect,5,9x9,66,0,0,20,84,86,13.7,2700,8000,10000,60-85%,yes
+187,normal,"Praline Plaza","score 8000",score,5,9x9,67,0,0,14,78,68,9.4,8000,10000,12500,60-85%,yes
+188,normal,"Praline Plaza","nuts 1 + caramel",nuts+caramel,5,8x9,70,25,0,15,76,80,10.4,3200,12000,15500,60-85%,yes
+189,normal,"Praline Plaza","caramel + collect 16 cupcake",caramel+collect,5,8x8,60,39,0,18,84,74,13.3,4400,13000,21000,60-85%,yes
+190,hard,"Praline Plaza","caramel + crates",caramel+crates,5,9x9,57,24,2,14,44,38,11.9,4000,10500,15000,30-50%,yes
+191,relief,"Praline Plaza","nuts 2",nuts,4,8x8,60,0,0,10,84,88,6.5,3600,18000,33000,60-85%,yes
+192,normal,"Praline Plaza","caramel + crates",caramel+crates,5,8x9,47,22,1,29,78,86,17.4,5500,13500,17000,60-85%,yes
+193,normal,"Praline Plaza","caramel",caramel,5,9x9,65,21,0,14,80,78,9.9,2200,11500,17000,60-85%,yes
+194,normal,"Praline Plaza","nuts 1 + collect 19 donut",nuts+collect,5,9x9,73,0,0,15,78,76,8.8,2700,7500,11500,60-85%,yes
+195,normal,"Praline Plaza","collect 29 macaron",collect,5,8x9,47,0,0,17,84,72,13.2,2400,8000,12500,60-85%,yes
+196,normal,"Praline Plaza","nuts 1 + collect 18 donut",nuts+collect,5,9x9,70,0,0,41,78,80,20.9,5500,13500,17000,60-85%,yes
+197,normal,"Praline Plaza","nuts 1 + crates",nuts+crates,5,9x9,72,0,4,31,76,76,15.0,5000,12000,16000,60-85%,yes
+198,normal,"Praline Plaza","caramel",caramel,6,9x9,67,21,0,45,78,76,27.5,7000,16000,19000,60-85%,yes
+199,normal,"Praline Plaza","nuts 1 + crates",nuts+crates,6,9x9,61,0,4,23,76,76,12.8,2900,7500,9000,60-85%,yes
+200,hard,"Praline Plaza","crates + collect 20 donut",crates+collect,5,9x9,70,0,2,11,48,50,8.5,2500,6500,8500,30-50%,yes
+201,relief,"Fudge Fountain","nuts 2",nuts,4,9x9,72,0,0,14,84,84,8.3,4000,20000,30000,60-85%,yes
+202,normal,"Fudge Fountain","score 8500",score,5,9x9,63,0,0,16,76,82,11.2,8500,10500,12500,60-85%,yes
+203,normal,"Fudge Fountain","collect 22 macaron + collect 19 toffee",collect,5,9x9,69,0,0,12,80,86,8.1,2200,9000,12000,60-85%,yes
+204,normal,"Fudge Fountain","nuts 2",nuts,5,9x9,79,0,0,26,82,84,13.4,4800,19000,29000,60-85%,yes
+205,normal,"Fudge Fountain","crates",crates,5,9x9,70,0,2,14,78,66,9.1,1800,5500,7000,60-85%,yes
+206,normal,"Fudge Fountain","nuts 1 + collect 16 macaron",nuts+collect,5,8x8,60,0,0,13,80,80,8.3,2100,7000,11000,60-85%,yes
+207,normal,"Fudge Fountain","collect 29 chocolate",collect,5,9x9,53,0,0,17,76,92,10.8,3900,12000,16000,60-85%,yes
+208,normal,"Fudge Fountain","caramel",caramel,5,9x9,65,25,0,14,84,86,10.2,4300,13000,17000,60-85%,yes
+209,normal,"Fudge Fountain","caramel + crates",caramel+crates,5,9x9,65,24,4,24,78,66,16.7,5000,16500,21000,60-85%,yes
+210,hard,"Fudge Fountain","nuts 2 + caramel",nuts+caramel,5,8x9,66,63,0,31,44,34,23.5,10500,33000,41000,30-50%,yes
+211,relief,"Fudge Fountain","nuts 2",nuts,5,9x9,65,0,0,23,80,76,14.4,4600,14500,19500,60-85%,yes
+212,normal,"Fudge Fountain","collect 23 chocolate + collect 23 lollipop",collect,6,9x9,63,0,0,26,80,88,18.8,3200,9500,12000,60-85%,yes
+213,normal,"Fudge Fountain","caramel",caramel,5,9x9,81,27,0,22,76,66,15.6,6000,21000,29000,60-85%,yes
+214,normal,"Fudge Fountain","nuts 1 + crates",nuts+crates,5,9x9,81,0,9,13,76,86,8.8,2700,11500,16000,60-85%,yes
+215,normal,"Fudge Fountain","crates + collect 19 donut",crates+collect,6,9x9,69,0,7,16,82,66,11.8,2400,6000,8000,60-85%,yes
+216,normal,"Fudge Fountain","collect 19 lollipop + collect 23 cupcake",collect,5,9x9,81,0,0,11,80,78,7.1,3300,9000,16500,60-85%,yes
+217,normal,"Fudge Fountain","caramel + collect 20 donut",caramel+collect,5,9x9,77,25,0,11,78,70,7.7,4600,12000,15500,60-85%,yes
+218,normal,"Fudge Fountain","collect 23 chocolate + collect 20 macaron",collect,6,9x9,65,0,0,19,78,66,14.6,3100,8000,11500,60-85%,yes
+219,normal,"Fudge Fountain","caramel + collect 19 chocolate",caramel+collect,5,8x9,72,25,0,11,78,68,7.6,3900,11500,18500,60-85%,yes
+220,hard,"Fudge Fountain","nuts 2 + crates",nuts+crates,6,9x9,65,0,4,34,46,48,23.6,4700,13500,16500,30-50%,yes
+221,relief,"Marzipan Market","nuts 2",nuts,4,9x9,65,0,0,12,80,86,6.9,2900,17000,29000,60-85%,yes
+222,normal,"Marzipan Market","crates",crates,5,9x9,71,0,9,28,76,66,19.8,4700,14000,18000,60-85%,yes
+223,normal,"Marzipan Market","caramel",caramel,5,8x8,60,39,0,19,76,86,12.9,4900,13500,21000,60-85%,yes
+224,normal,"Marzipan Market","caramel + crates",caramel+crates,5,9x9,69,27,4,30,76,82,21.3,6000,17000,23000,60-85%,yes
+225,normal,"Marzipan Market","caramel",caramel,5,8x9,68,23,0,17,76,72,10.2,3900,13500,16500,60-85%,yes
+226,normal,"Marzipan Market","caramel",caramel,5,9x9,67,25,0,23,80,80,16.4,6000,14500,18500,60-85%,yes
+227,normal,"Marzipan Market","nuts 1 + crates",nuts+crates,5,8x9,47,0,8,14,78,70,7.8,2000,5000,7500,60-85%,yes
+228,normal,"Marzipan Market","crates + collect 21 macaron",crates+collect,6,9x9,77,0,9,18,78,88,12.4,2800,8000,11000,60-85%,yes
+229,normal,"Marzipan Market","nuts 2",nuts,5,8x9,47,0,0,35,80,76,19.8,6500,15000,20000,60-85%,yes
+230,hard,"Marzipan Market","crates + collect 21 macaron",crates+collect,5,8x8,60,0,8,11,40,58,9.2,3500,9000,12500,30-50%,yes
+231,relief,"Marzipan Market","caramel",caramel,4,9x9,59,28,0,18,82,54,11.6,7500,29000,47000,60-85%,yes
+232,normal,"Marzipan Market","caramel + collect 19 donut",caramel+collect,5,8x9,47,25,0,16,78,74,11.3,3400,8500,11000,60-85%,yes
+233,normal,"Marzipan Market","crates + collect 21 toffee",crates+collect,6,9x9,81,0,8,14,76,66,10.5,2200,7500,9500,60-85%,yes
+234,normal,"Marzipan Market","nuts 2",nuts,5,8x8,58,0,0,18,76,62,11.4,3400,10500,17000,60-85%,yes
+235,normal,"Marzipan Market","collect 20 macaron + collect 20 lollipop",collect,5,8x8,60,0,0,12,82,82,8.9,2400,7500,11000,60-85%,yes
+236,normal,"Marzipan Market","nuts 2",nuts,5,8x8,58,0,0,24,78,76,14.5,3800,14500,20000,60-85%,yes
+237,normal,"Marzipan Market","caramel + crates",caramel+crates,5,9x9,69,45,2,19,76,74,13.4,4800,15500,20000,60-85%,yes
+238,normal,"Marzipan Market","caramel",caramel,5,9x9,69,27,0,20,78,64,13.2,3300,10500,16500,60-85%,yes
+239,normal,"Marzipan Market","nuts 1 + collect 19 donut",nuts+collect,5,9x9,57,0,0,12,74,68,8.7,2300,8000,14000,60-85%,yes
+240,hard,"Marzipan Market","nuts 2 + crates",nuts+crates,5,9x9,67,0,8,21,44,46,16.7,4200,12500,15500,30-50%,yes
+241,relief,"Nougat Nook","caramel",caramel,4,9x9,81,36,0,10,76,78,7.0,7500,34000,59000,60-85%,yes
+242,normal,"Nougat Nook","nuts 1 + crates",nuts+crates,6,9x9,69,0,6,21,78,64,10.5,3200,7500,9500,60-85%,yes
+243,normal,"Nougat Nook","caramel",caramel,5,9x9,75,27,0,25,76,74,16.4,6000,16500,20000,60-85%,yes
+244,normal,"Nougat Nook","nuts 1 + crates",nuts+crates,5,9x9,65,0,5,15,76,60,9.2,2900,10500,16500,60-85%,yes
+245,normal,"Nougat Nook","score 9500",score,5,9x9,61,0,0,15,80,74,9.8,9500,12000,14000,60-85%,yes
+246,normal,"Nougat Nook","collect 31 chocolate",collect,6,8x9,47,0,0,32,78,60,24.9,3900,9500,11500,60-85%,yes
+247,normal,"Nougat Nook","score 9500",score,6,9x9,72,0,0,37,80,88,27.8,9500,11500,14500,60-85%,yes
+248,normal,"Nougat Nook","collect 26 chocolate",collect,5,8x8,58,0,0,12,78,86,8.7,2700,9500,12000,60-85%,yes
+249,normal,"Nougat Nook","nuts 2",nuts,5,9x9,79,0,0,18,74,58,11.1,4200,18000,23000,60-85%,yes
+250,hard,"Nougat Nook","caramel + crates",caramel+crates,6,8x8,60,30,7,23,44,28,19.6,3900,10000,12000,30-50%,yes
+251,relief,"Nougat Nook","caramel",caramel,5,9x9,61,31,0,18,84,88,12.1,4100,12000,17500,60-85%,yes
+252,normal,"Nougat Nook","crates",crates,5,9x9,63,0,5,16,80,96,10.8,2700,8500,13000,60-85%,yes
+253,normal,"Nougat Nook","nuts 1 + caramel",nuts+caramel,6,9x9,61,42,0,45,76,80,29.7,7000,18000,22000,60-85%,yes
+254,normal,"Nougat Nook","nuts 1 + collect 22 toffee",nuts+collect,5,8x8,60,0,0,15,80,84,10.3,3300,9000,12500,60-85%,yes
+255,normal,"Nougat Nook","caramel",caramel,6,9x9,63,43,0,38,80,72,26.3,7500,17500,22000,60-85%,yes
+256,normal,"Nougat Nook","nuts 1 + collect 22 toffee",nuts+collect,5,9x9,55,0,0,14,78,62,9.5,2700,9000,11500,60-85%,yes
+257,normal,"Nougat Nook","collect 30 chocolate",collect,6,9x9,67,0,0,27,74,66,19.4,3400,9500,11500,60-85%,yes
+258,normal,"Nougat Nook","crates + collect 19 toffee",crates+collect,5,9x9,63,0,6,12,76,80,9.0,2300,6500,10500,60-85%,yes
+259,normal,"Nougat Nook","nuts 1 + crates",nuts+crates,5,9x9,69,0,5,13,80,74,8.6,2800,10500,13000,60-85%,yes
+260,hard,"Nougat Nook","caramel + collect 25 macaron",caramel+collect,6,9x9,72,32,0,44,42,38,36.9,7000,14500,19000,30-50%,yes
+261,relief,"Brittle Bridge","caramel",caramel,5,9x9,67,25,0,11,82,68,7.2,2900,9500,13000,60-85%,yes
+262,normal,"Brittle Bridge","score 10000",score,5,9x9,77,0,0,12,78,78,8.0,10000,12500,16000,60-85%,yes
+263,normal,"Brittle Bridge","collect 25 toffee + collect 21 lollipop",collect,5,9x9,63,0,0,12,80,68,8.3,2300,8500,14000,60-85%,yes
+264,normal,"Brittle Bridge","caramel + collect 20 macaron",caramel+collect,6,9x9,57,25,0,20,80,72,15.1,3400,9000,10500,60-85%,yes
+265,normal,"Brittle Bridge","crates",crates,5,8x8,64,0,9,11,82,86,7.6,2200,7500,12500,60-85%,yes
+266,normal,"Brittle Bridge","nuts 1 + collect 21 donut",nuts+collect,5,9x9,67,0,0,15,76,80,9.8,2900,9500,13000,60-85%,yes
+267,normal,"Brittle Bridge","crates",crates,5,9x9,63,0,4,21,74,60,14.4,3300,11000,15500,60-85%,yes
+268,normal,"Brittle Bridge","caramel",caramel,5,8x9,66,27,0,22,76,76,12.7,4600,16000,21000,60-85%,yes
+269,normal,"Brittle Bridge","nuts 1 + collect 23 donut",nuts+collect,6,8x8,62,0,0,25,76,68,18.0,3800,10500,12000,60-85%,yes
+270,hard,"Brittle Bridge","caramel + crates",caramel+crates,5,9x9,63,30,2,27,44,40,21.6,10500,23000,30000,30-50%,yes
+271,relief,"Brittle Bridge","caramel",caramel,5,9x9,79,27,0,25,82,92,13.8,6500,21000,30000,60-85%,yes
+272,normal,"Brittle Bridge","collect 24 chocolate + collect 24 macaron",collect,5,8x9,47,0,0,17,80,74,12.4,3200,8500,11500,60-85%,yes
+273,normal,"Brittle Bridge","caramel",caramel,5,9x9,67,41,0,23,76,84,17.5,7500,18500,22000,60-85%,yes
+274,normal,"Brittle Bridge","caramel + collect 19 toffee",caramel+collect,5,9x9,65,22,0,22,76,92,13.4,4200,16500,21000,60-85%,yes
+275,normal,"Brittle Bridge","score 10000",score,5,8x9,72,0,0,12,76,70,8.7,10000,12000,14000,60-85%,yes
+276,normal,"Brittle Bridge","collect 28 donut",collect,5,9x9,77,0,0,10,74,60,6.9,2900,10000,15500,60-85%,yes
+277,normal,"Brittle Bridge","score 10000",score,5,8x9,72,0,0,13,82,68,8.6,10000,12500,15000,60-85%,yes
+278,normal,"Brittle Bridge","collect 24 donut + collect 23 cupcake",collect,6,8x9,47,0,0,29,82,80,23.5,3400,9000,11000,60-85%,yes
+279,normal,"Brittle Bridge","caramel + collect 21 lollipop",caramel+collect,5,9x9,63,28,0,19,76,68,12.5,5000,14000,20000,60-85%,yes
+280,hard,"Brittle Bridge","caramel + crates",caramel+crates,5,8x9,68,24,3,14,40,50,11.8,3200,13000,17000,30-50%,yes
+281,relief,"Meringue Mill","nuts 2",nuts,4,9x9,72,0,0,20,84,82,11.2,4400,21000,29000,60-85%,yes
+282,normal,"Meringue Mill","collect 22 toffee + collect 25 chocolate",collect,5,8x9,47,0,0,15,78,60,12.0,3300,7500,9500,60-85%,yes
+283,normal,"Meringue Mill","caramel",caramel,5,9x9,67,56,0,29,78,56,21.9,7000,22000,26000,60-85%,yes
+284,normal,"Meringue Mill","nuts 2 + collect 19 toffee",nuts+collect,5,8x9,72,0,0,26,74,80,14.8,5000,20000,25000,60-85%,yes
+285,normal,"Meringue Mill","collect 24 chocolate + collect 25 donut",collect,5,9x9,63,0,0,14,76,68,9.8,3300,9500,12500,60-85%,yes
+286,normal,"Meringue Mill","nuts 2 + collect 21 chocolate",nuts+collect,5,9x9,57,0,0,25,74,66,15.9,5000,14000,20000,60-85%,yes
+287,normal,"Meringue Mill","nuts 2 + crates",nuts+crates,5,9x9,53,0,6,26,74,70,16.2,5000,16000,19000,60-85%,yes
+288,normal,"Meringue Mill","caramel",caramel,5,9x9,72,40,0,39,74,86,28.6,8000,19500,24000,60-85%,yes
+289,normal,"Meringue Mill","caramel + crates",caramel+crates,5,9x9,63,30,3,44,76,66,27.6,10500,28000,35000,60-85%,yes
+290,hard,"Meringue Mill","caramel + crates",caramel+crates,6,9x9,79,34,2,25,46,36,19.8,4200,14000,16000,30-50%,yes
+291,relief,"Meringue Mill","caramel",caramel,4,9x9,73,34,0,14,80,80,9.2,7000,25000,31000,60-85%,yes
+292,normal,"Meringue Mill","score 10500",score,5,9x9,63,0,0,16,76,66,10.9,10500,13000,14500,60-85%,yes
+293,normal,"Meringue Mill","collect 29 macaron",collect,5,9x9,61,0,0,16,74,70,10.8,3300,9000,12500,60-85%,yes
+294,normal,"Meringue Mill","nuts 3",nuts,5,9x9,63,0,0,23,76,68,15.9,4500,16000,21000,60-85%,yes
+295,normal,"Meringue Mill","nuts 2 + caramel",nuts+caramel,5,9x9,69,30,0,32,74,72,20.6,7000,23000,29000,60-85%,yes
+296,normal,"Meringue Mill","crates",crates,6,9x9,71,0,5,31,74,88,12.9,4100,9500,12000,60-85%,yes
+297,normal,"Meringue Mill","crates",crates,6,8x9,72,0,5,11,76,70,8.5,1700,4600,6000,60-85%,yes
+298,normal,"Meringue Mill","caramel",caramel,5,9x9,68,42,0,28,74,72,18.8,4900,12500,14500,60-85%,yes
+299,normal,"Meringue Mill","caramel + crates",caramel+crates,5,9x9,69,37,4,24,72,80,16.9,7000,20000,27000,60-85%,yes
+300,hard,"Meringue Mill","nuts 2 + caramel",nuts+caramel,6,9x9,69,41,0,44,42,60,31.4,8500,19500,23000,30-50%,yes
+301,relief,"Gingerbread Grove","nuts 2",nuts,5,8x8,64,0,0,21,80,62,11.9,3800,13500,18500,60-85%,yes
+302,normal,"Gingerbread Grove","collect 26 macaron + collect 22 toffee",collect,5,9x9,69,0,0,15,72,84,11.3,2800,9000,13500,60-85%,yes
+303,normal,"Gingerbread Grove","collect 23 toffee + collect 24 donut",collect,6,8x8,58,0,0,25,76,76,19.2,3200,9000,12000,60-85%,yes
+304,normal,"Gingerbread Grove","nuts 2 + crates",nuts+crates,5,8x9,47,0,1,25,78,86,14.6,4000,9500,13000,60-85%,yes
+305,normal,"Gingerbread Grove","crates + collect 20 toffee",crates+collect,5,9x9,73,0,3,11,76,70,8.1,2000,5500,8500,60-85%,yes
+306,normal,"Gingerbread Grove","collect 31 lollipop",collect,5,9x9,75,0,0,16,76,74,12.0,3000,9000,12500,60-85%,yes
+307,normal,"Gingerbread Grove","caramel + collect 20 macaron",caramel+collect,5,8x8,60,30,0,20,74,74,15.1,5500,15000,21000,60-85%,yes
+308,normal,"Gingerbread Grove","collect 25 cupcake + collect 25 lollipop",collect,5,9x9,70,0,0,17,78,76,13.1,2900,8500,11000,60-85%,yes
+309,normal,"Gingerbread Grove","caramel + crates",caramel+crates,5,9x9,67,35,3,38,72,84,24.8,8000,22000,31000,60-85%,yes
+310,hard,"Gingerbread Grove","nuts 2 + crates",nuts+crates,5,9x9,69,0,4,17,42,32,13.0,4200,13000,16500,30-50%,yes
+311,relief,"Gingerbread Grove","caramel",caramel,5,9x9,63,31,0,16,82,84,12.1,3100,12000,17000,60-85%,yes
+312,normal,"Gingerbread Grove","collect 27 chocolate + collect 23 toffee",collect,5,9x9,63,0,0,15,76,72,10.9,3100,10000,13500,60-85%,yes
+313,normal,"Gingerbread Grove","crates",crates,5,9x9,70,0,4,10,74,78,6.9,1200,4200,7500,60-85%,yes
+314,normal,"Gingerbread Grove","nuts 2 + collect 24 toffee",nuts+collect,5,9x9,67,0,0,25,76,68,16.4,5000,18000,25000,60-85%,yes
+315,normal,"Gingerbread Grove","caramel",caramel,5,9x9,67,28,0,26,74,82,17.1,6000,17500,24000,60-85%,yes
+316,normal,"Gingerbread Grove","caramel",caramel,5,9x9,67,59,0,25,76,70,18.7,9500,24000,30000,60-85%,yes
+317,normal,"Gingerbread Grove","nuts 2 + crates",nuts+crates,5,9x9,63,0,4,24,74,78,16.0,4900,14500,17500,60-85%,yes
+318,normal,"Gingerbread Grove","caramel",caramel,5,8x8,60,42,0,23,74,88,16.1,8000,20000,25000,60-85%,yes
+319,normal,"Gingerbread Grove","caramel + crates",caramel+crates,5,8x9,72,36,3,24,72,72,19.0,6000,23000,33000,60-85%,yes
+320,hard,"Gingerbread Grove","caramel + collect 27 cupcake",caramel+collect,5,9x9,69,30,0,25,42,30,20.6,7500,20000,25000,30-50%,yes
+321,relief,"Sherbet Shore","nuts 2",nuts,5,9x9,69,0,0,24,84,72,12.9,3900,18000,29000,60-85%,yes
+322,normal,"Sherbet Shore","score 11000",score,5,8x8,64,0,0,15,78,58,10.8,11000,13500,14500,60-85%,yes
+323,normal,"Sherbet Shore","nuts 2 + caramel",nuts+caramel,5,8x9,68,39,0,30,76,88,21.8,8000,24000,31000,60-85%,yes
+324,normal,"Sherbet Shore","caramel + collect 25 cupcake",caramel+collect,5,9x9,72,36,0,35,74,58,23.5,7000,16000,21000,60-85%,yes
+325,normal,"Sherbet Shore","crates",crates,5,9x9,72,0,5,20,74,84,11.8,3200,9000,12000,60-85%,yes
+326,normal,"Sherbet Shore","caramel",caramel,5,9x9,57,24,0,22,80,64,17.1,7000,17500,22000,60-85%,yes
+327,normal,"Sherbet Shore","crates",crates,5,8x8,60,0,6,11,80,76,8.3,2100,8500,12000,60-85%,yes
+328,normal,"Sherbet Shore","caramel",caramel,5,9x9,65,20,0,17,72,58,12.6,4500,13500,18000,60-85%,yes
+329,normal,"Sherbet Shore","caramel + crates",caramel+crates,5,9x9,72,42,2,24,76,50,18.7,5500,13500,15500,60-85%,yes
+330,hard,"Sherbet Shore","nuts 2 + caramel",nuts+caramel,6,9x9,67,30,0,41,42,34,33.7,9000,21000,23000,30-50%,yes
+331,relief,"Sherbet Shore","nuts 2",nuts,5,9x9,81,0,0,23,82,82,12.8,4500,21000,27000,60-85%,yes
+332,normal,"Sherbet Shore","nuts 2 + crates",nuts+crates,5,9x9,65,0,8,25,74,78,15.3,5500,19000,27000,60-85%,yes
+333,normal,"Sherbet Shore","crates + collect 23 toffee",crates+collect,6,8x8,56,0,4,23,72,78,15.6,2700,8000,11500,60-85%,yes
+334,normal,"Sherbet Shore","nuts 3",nuts,5,9x9,81,0,0,24,72,72,16.7,7000,22000,36000,60-85%,yes
+335,normal,"Sherbet Shore","crates + collect 22 lollipop",crates+collect,5,8x9,72,0,5,11,80,82,8.0,2300,9000,12000,60-85%,yes
+336,normal,"Sherbet Shore","collect 23 lollipop + collect 25 macaron",collect,5,9x9,75,0,0,11,72,72,7.6,3600,10000,16000,60-85%,yes
+337,normal,"Sherbet Shore","score 11500",score,5,9x9,67,0,0,18,74,64,12.6,11500,14000,15000,60-85%,yes
+338,normal,"Sherbet Shore","nuts 2 + caramel",nuts+caramel,5,9x9,67,19,0,32,74,76,20.2,6000,17000,24000,60-85%,yes
+339,normal,"Sherbet Shore","nuts 3",nuts,5,9x9,63,0,0,29,72,64,19.1,6000,19500,27000,60-85%,yes
+340,hard,"Sherbet Shore","nuts 2 + crates",nuts+crates,5,8x8,64,0,6,16,42,56,13.0,3500,15000,23000,30-50%,yes
+341,relief,"Truffle Tower","nuts 2",nuts,5,9x9,72,0,0,41,84,72,19.3,6500,17000,23000,60-85%,yes
+342,normal,"Truffle Tower","caramel + crates",caramel+crates,6,9x9,57,25,5,32,74,74,21.8,5500,13500,17500,60-85%,yes
+343,normal,"Truffle Tower","caramel",caramel,5,9x9,63,30,0,19,72,48,13.1,3900,10500,15000,60-85%,yes
+344,normal,"Truffle Tower","caramel + crates",caramel+crates,5,8x9,72,49,2,17,72,70,12.0,6500,19000,25000,60-85%,yes
+345,normal,"Truffle Tower","collect 35 chocolate",collect,5,9x9,72,0,0,20,72,60,15.5,3400,10000,12500,60-85%,yes
+346,normal,"Truffle Tower","caramel",caramel,5,8x9,68,46,0,24,74,68,16.6,8500,24000,29000,60-85%,yes
+347,normal,"Truffle Tower","nuts 2 + crates",nuts+crates,5,9x9,72,0,4,33,72,70,19.1,6500,18000,24000,60-85%,yes
+348,normal,"Truffle Tower","caramel",caramel,5,9x9,72,32,0,40,76,80,28.9,8000,19000,23000,60-85%,yes
+349,normal,"Truffle Tower","caramel + crates",caramel+crates,5,9x9,63,30,1,45,76,74,28.7,12500,30000,36000,60-85%,yes
+350,hard,"Truffle Tower","crates + collect 27 cupcake",crates+collect,6,9x9,71,0,6,31,44,60,24.3,5500,14500,18500,30-50%,yes
+351,relief,"Truffle Tower","nuts 2",nuts,5,9x9,67,0,0,25,84,80,14.6,4300,16500,27000,60-85%,yes
+352,normal,"Truffle Tower","caramel + collect 22 macaron",caramel+collect,5,8x8,64,49,0,19,76,62,13.4,7000,16500,23000,60-85%,yes
+353,normal,"Truffle Tower","nuts 2 + caramel",nuts+caramel,6,9x9,67,35,0,44,72,56,31.9,6500,15500,19500,60-85%,yes
+354,normal,"Truffle Tower","caramel + collect 26 donut",caramel+collect,5,9x9,73,58,0,37,72,64,27.8,9000,22000,28000,60-85%,yes
+355,normal,"Truffle Tower","nuts 2 + caramel",nuts+caramel,5,9x9,63,41,0,25,72,54,19.9,7000,20000,26000,60-85%,yes
+356,normal,"Truffle Tower","nuts 2 + collect 24 donut",nuts+collect,6,9x9,81,0,0,42,72,76,25.8,7500,19000,24000,60-85%,yes
+357,normal,"Truffle Tower","nuts 2 + crates",nuts+crates,5,9x9,69,0,7,22,72,72,14.8,4600,19000,26000,60-85%,yes
+358,normal,"Truffle Tower","crates",crates,6,8x9,72,0,10,11,76,72,7.1,1600,4100,5500,60-85%,yes
+359,normal,"Truffle Tower","caramel + crates",caramel+crates,6,9x9,65,45,2,28,72,62,19.4,5000,14000,16000,60-85%,yes
+360,hard,"Truffle Tower","caramel + crates",caramel+crates,6,9x9,81,36,2,31,46,32,26.0,6500,17500,22000,30-50%,yes
+361,relief,"Waffle Wharf","caramel",caramel,5,8x8,62,34,0,23,78,74,16.8,6000,16000,21000,60-85%,yes
+362,normal,"Waffle Wharf","collect 29 cupcake + collect 27 toffee",collect,5,9x9,69,0,0,13,80,78,9.6,4100,11500,14500,60-85%,yes
+363,normal,"Waffle Wharf","caramel",caramel,5,9x9,77,49,0,19,82,82,14.2,9500,22000,29000,60-85%,yes
+364,normal,"Waffle Wharf","nuts 2 + crates",nuts+crates,5,9x9,69,0,6,24,76,80,14.9,5000,19000,27000,60-85%,yes
+365,normal,"Waffle Wharf","score 12500",score,5,8x9,45,0,0,25,72,60,18.9,12500,15000,17000,60-85%,yes
+366,normal,"Waffle Wharf","collect 35 chocolate",collect,6,8x9,66,0,0,29,74,78,22.8,3900,11000,15000,60-85%,yes
+367,normal,"Waffle Wharf","caramel + collect 23 chocolate",caramel+collect,5,9x9,81,36,0,20,78,70,13.8,6000,19500,27000,60-85%,yes
+368,normal,"Waffle Wharf","collect 30 cupcake",collect,6,9x9,81,0,0,21,74,72,15.2,3800,10000,12000,60-85%,yes
+369,normal,"Waffle Wharf","nuts 3",nuts,5,9x9,69,0,0,28,70,64,18.6,7000,18500,22000,60-85%,yes
+370,hard,"Waffle Wharf","nuts 2 + crates",nuts+crates,5,9x9,69,0,7,20,40,28,16.4,6500,22000,28000,30-50%,yes
+371,relief,"Waffle Wharf","nuts 2",nuts,5,9x9,69,0,0,24,84,78,14.2,5000,17500,25000,60-85%,yes
+372,normal,"Waffle Wharf","caramel + crates",caramel+crates,5,9x9,57,25,5,19,76,88,13.7,4100,14500,18500,60-85%,yes
+373,normal,"Waffle Wharf","caramel",caramel,5,8x8,60,23,0,20,76,84,14.2,3300,12000,15500,60-85%,yes
+374,normal,"Waffle Wharf","nuts 2 + collect 26 macaron",nuts+collect,5,9x9,61,0,0,27,72,84,17.5,5500,14000,19500,60-85%,yes
+375,normal,"Waffle Wharf","caramel",caramel,6,9x9,63,30,0,41,72,70,26.6,6500,14000,18500,60-85%,yes
+376,normal,"Waffle Wharf","collect 31 cupcake",collect,5,9x9,63,0,0,15,72,72,11.8,3600,10000,13500,60-85%,yes
+377,normal,"Waffle Wharf","collect 34 cupcake",collect,6,9x9,75,0,0,34,82,84,26.2,4100,11500,15000,60-85%,yes
+378,normal,"Waffle Wharf","crates + collect 23 donut",crates+collect,5,9x9,65,0,9,14,72,66,11.0,3500,11000,16500,60-85%,yes
+379,normal,"Waffle Wharf","caramel + collect 26 cupcake",caramel+collect,5,8x9,70,62,0,29,72,82,21.0,8000,21000,28000,60-85%,yes
+380,hard,"Waffle Wharf","crates + collect 29 macaron",crates+collect,6,8x9,47,0,5,29,44,40,24.2,4600,9000,12500,30-50%,yes
+381,relief,"Maple Meadow","nuts 2",nuts,4,9x9,72,0,0,17,84,72,10.6,3600,16500,22000,60-85%,yes
+382,normal,"Maple Meadow","score 12500",score,5,9x9,69,0,0,17,72,58,12.1,12500,15000,17000,60-85%,yes
+383,normal,"Maple Meadow","caramel",caramel,5,9x9,69,20,0,16,72,78,10.9,2800,9000,14000,60-85%,yes
+384,normal,"Maple Meadow","caramel + collect 24 lollipop",caramel+collect,5,9x9,73,24,0,23,78,80,15.8,4500,12000,18500,60-85%,yes
+385,normal,"Maple Meadow","crates",crates,5,9x9,65,0,6,16,78,82,11.5,2500,8000,11000,60-85%,yes
+386,normal,"Maple Meadow","crates",crates,6,9x9,59,0,7,11,74,72,7.4,1500,3500,5500,60-85%,yes
+387,normal,"Maple Meadow","crates",crates,5,9x9,67,0,8,21,76,76,15.8,4000,12000,16000,60-85%,yes
+388,normal,"Maple Meadow","crates + collect 27 lollipop",crates+collect,5,9x9,72,0,8,25,74,64,18.0,4500,11500,14000,60-85%,yes
+389,normal,"Maple Meadow","caramel + crates",caramel+crates,5,9x9,72,42,2,27,70,78,18.5,6000,13500,17500,60-85%,yes
+390,hard,"Maple Meadow","caramel + crates",caramel+crates,6,9x9,57,33,2,27,40,26,22.1,5000,12500,15000,30-50%,yes
+391,relief,"Maple Meadow","nuts 2",nuts,4,9x9,61,0,0,10,82,82,6.8,4700,19500,38000,60-85%,yes
+392,normal,"Maple Meadow","collect 26 toffee + collect 28 macaron",collect,5,9x9,77,0,0,11,70,56,7.9,4500,11500,16500,60-85%,yes
+393,normal,"Maple Meadow","crates + collect 24 chocolate",crates+collect,5,8x8,58,0,9,18,70,82,14.8,3600,10000,14500,60-85%,yes
+394,normal,"Maple Meadow","caramel + crates",caramel+crates,5,9x9,73,34,4,39,72,76,28.2,9500,24000,32000,60-85%,yes
+395,normal,"Maple Meadow","crates + collect 25 toffee",crates+collect,5,9x9,65,0,6,14,80,86,10.9,2700,10000,12000,60-85%,yes
+396,normal,"Maple Meadow","collect 29 cupcake + collect 29 toffee",collect,6,9x9,65,0,0,32,76,76,26.0,4200,10500,12500,60-85%,yes
+397,normal,"Maple Meadow","score 13000",score,5,8x8,62,0,0,18,74,72,12.4,13000,15500,19000,60-85%,yes
+398,normal,"Maple Meadow","nuts 2 + caramel",nuts+caramel,5,8x9,72,41,0,24,72,78,18.0,9500,23000,28000,60-85%,yes
+399,normal,"Maple Meadow","caramel + collect 24 donut",caramel+collect,5,8x9,47,21,0,21,70,72,14.4,4300,11500,14500,60-85%,yes
+400,hard,"Maple Meadow","caramel + collect 30 macaron",caramel+collect,5,9x9,65,65,0,35,46,32,29.5,11000,23000,29000,30-50%,yes
+401,relief,"Cocoa Canyon","caramel",caramel,5,9x9,77,25,0,14,70,84,10.1,5000,14500,20000,60-85%,yes
+402,normal,"Cocoa Canyon","caramel + crates",caramel+crates,5,9x9,57,28,5,34,70,74,19.8,7500,19000,25000,60-85%,yes
+403,normal,"Cocoa Canyon","caramel",caramel,5,9x9,69,30,0,20,72,74,13.5,4000,10500,15500,60-85%,yes
+404,normal,"Cocoa Canyon","caramel + crates",caramel+crates,5,8x8,60,30,4,19,76,68,13.9,5000,15000,20000,60-85%,yes
+405,normal,"Cocoa Canyon","collect 30 chocolate + collect 28 cupcake",collect,5,9x9,71,0,0,18,74,62,14.4,3800,9000,11000,60-85%,yes
+406,normal,"Cocoa Canyon","caramel",caramel,5,8x8,62,30,0,25,70,54,18.5,7000,17500,25000,60-85%,yes
+407,normal,"Cocoa Canyon","collect 37 macaron",collect,5,8x8,64,0,0,16,72,74,11.7,4800,13500,18000,60-85%,yes
+408,normal,"Cocoa Canyon","caramel",caramel,5,9x9,72,33,0,30,74,82,21.8,6500,16500,23000,60-85%,yes
+409,normal,"Cocoa Canyon","nuts 3",nuts,5,9x9,63,0,0,26,70,58,16.0,4800,15500,20000,60-85%,yes
+410,hard,"Cocoa Canyon","caramel + collect 28 cupcake",caramel+collect,5,9x9,81,81,0,20,38,36,14.9,15500,37000,39000,30-50%,yes
+411,relief,"Cocoa Canyon","caramel",caramel,5,9x9,63,23,0,15,82,68,10.8,3400,9500,12500,60-85%,yes
+412,normal,"Cocoa Canyon","caramel + collect 25 donut",caramel+collect,5,8x8,64,49,0,19,72,68,13.4,7000,17000,22000,60-85%,yes
+413,normal,"Cocoa Canyon","nuts 2 + caramel",nuts+caramel,5,9x9,77,49,0,25,74,76,17.5,10500,24000,28000,60-85%,yes
+414,normal,"Cocoa Canyon","nuts 3",nuts,5,9x9,63,0,0,26,70,62,17.2,4900,16500,21000,60-85%,yes
+415,normal,"Cocoa Canyon","nuts 2 + caramel",nuts+caramel,5,9x9,63,30,0,44,70,72,29.5,10000,25000,30000,60-85%,yes
+416,normal,"Cocoa Canyon","crates",crates,6,8x9,72,0,6,13,74,84,8.5,1600,5500,8000,60-85%,yes
+417,normal,"Cocoa Canyon","crates",crates,5,9x9,81,0,5,10,70,58,7.5,1900,9000,17500,60-85%,yes
+418,normal,"Cocoa Canyon","caramel",caramel,5,8x8,64,64,0,22,74,62,17.2,8500,23000,31000,60-85%,yes
+419,normal,"Cocoa Canyon","caramel + crates",caramel+crates,5,9x9,63,30,7,22,72,66,17.0,5000,14500,18500,60-85%,yes
+420,hard,"Cocoa Canyon","nuts 3 + crates",nuts+crates,6,9x9,63,0,4,37,38,44,28.5,6000,13000,14500,30-50%,yes
+421,relief,"Sugarplum Square","nuts 2",nuts,5,8x8,56,0,0,32,84,84,15.8,5000,15000,21000,60-85%,yes
+422,normal,"Sugarplum Square","score 13500",score,5,9x9,65,0,0,20,70,56,15.7,13500,15000,16500,60-85%,yes
+423,normal,"Sugarplum Square","caramel",caramel,5,9x9,73,34,0,33,72,74,23.2,7500,20000,27000,60-85%,yes
+424,normal,"Sugarplum Square","nuts 2 + crates",nuts+crates,5,9x9,65,0,10,33,70,76,19.9,6000,16000,19500,60-85%,yes
+425,normal,"Sugarplum Square","score 14000",score,6,9x9,75,0,0,28,74,60,23.2,14000,15500,17000,60-85%,yes
+426,normal,"Sugarplum Square","collect 30 macaron + collect 26 lollipop",collect,5,9x9,77,0,0,12,70,60,8.6,4400,11500,16500,60-85%,yes
+427,normal,"Sugarplum Square","crates",crates,5,8x8,60,0,11,16,70,76,13.0,2300,8000,9500,60-85%,yes
+428,normal,"Sugarplum Square","collect 30 chocolate + collect 27 toffee",collect,5,9x9,75,0,0,13,74,58,9.5,4000,11500,14500,60-85%,yes
+429,normal,"Sugarplum Square","caramel + crates",caramel+crates,5,9x9,69,37,6,23,68,64,16.1,7000,22000,28000,60-85%,yes
+430,hard,"Sugarplum Square","crates + collect 26 cupcake",crates+collect,6,8x9,47,0,7,28,38,34,23.8,3800,9000,11500,30-50%,yes
+431,relief,"Sugarplum Square","caramel",caramel,4,9x9,67,14,0,16,84,84,10.2,3300,25000,38000,60-85%,yes
+432,normal,"Sugarplum Square","crates",crates,5,9x9,81,0,8,14,68,78,10.4,3000,13000,17500,60-85%,yes
+433,normal,"Sugarplum Square","collect 30 toffee + collect 30 donut",collect,5,9x9,65,0,0,15,74,76,11.4,3900,11000,15000,60-85%,yes
+434,normal,"Sugarplum Square","caramel + crates",caramel+crates,5,9x9,65,45,2,25,74,64,18.6,8500,22000,29000,60-85%,yes
+435,normal,"Sugarplum Square","crates + collect 28 macaron",crates+collect,6,9x9,57,0,9,24,74,64,18.7,3400,9500,13000,60-85%,yes
+436,normal,"Sugarplum Square","caramel",caramel,5,8x9,70,48,0,25,74,64,18.2,9500,24000,30000,60-85%,yes
+437,normal,"Sugarplum Square","nuts 2 + crates",nuts+crates,5,9x9,61,0,5,22,72,60,13.9,4800,14000,19000,60-85%,yes
+438,normal,"Sugarplum Square","crates + collect 27 macaron",crates+collect,5,9x9,75,0,10,14,70,74,11.1,3000,11500,18000,60-85%,yes
+439,normal,"Sugarplum Square","nuts 2 + crates",nuts+crates,6,8x9,72,0,8,38,72,64,27.7,7000,16500,19500,60-85%,yes
+440,hard,"Sugarplum Square","nuts 3 + caramel",nuts+caramel,5,8x9,72,70,0,26,40,28,19.9,13500,33000,36000,30-50%,yes
+441,relief,"Biscuit Boulevard","caramel",caramel,5,8x9,72,27,0,18,82,88,12.1,3300,12500,19500,60-85%,yes
+442,normal,"Biscuit Boulevard","caramel + collect 26 macaron",caramel+collect,5,9x9,63,30,0,21,68,52,15.9,4900,16000,20000,60-85%,yes
+443,normal,"Biscuit Boulevard","collect 35 donut",collect,6,8x9,45,0,0,38,72,76,31.1,4900,11500,13000,60-85%,yes
+444,normal,"Biscuit Boulevard","nuts 3",nuts,5,9x9,63,0,0,25,72,70,15.5,5500,16500,24000,60-85%,yes
+445,normal,"Biscuit Boulevard","crates",crates,6,9x9,72,0,10,39,74,74,28.5,4700,12000,15500,60-85%,yes
+446,normal,"Biscuit Boulevard","nuts 3",nuts,5,8x8,60,0,0,18,72,54,12.0,3700,14000,19000,60-85%,yes
+447,normal,"Biscuit Boulevard","crates",crates,6,8x8,56,0,6,15,72,66,10.7,2000,4800,6000,60-85%,yes
+448,normal,"Biscuit Boulevard","crates",crates,5,9x9,81,0,7,11,76,78,7.9,2600,9500,17000,60-85%,yes
+449,normal,"Biscuit Boulevard","nuts 2 + collect 26 toffee",nuts+collect,5,9x9,72,0,0,29,68,64,18.6,6500,17500,22000,60-85%,yes
+450,hard,"Biscuit Boulevard","nuts 3 + caramel",nuts+caramel,5,8x9,72,43,0,29,38,40,22.5,11000,27000,31000,30-50%,yes
+451,relief,"Biscuit Boulevard","caramel",caramel,5,9x9,77,25,0,14,84,86,8.8,4900,16000,21000,60-85%,yes
+452,normal,"Biscuit Boulevard","score 14500",score,6,9x9,55,0,0,40,68,76,32.0,14500,17000,19000,60-85%,yes
+453,normal,"Biscuit Boulevard","collect 31 chocolate + collect 28 lollipop",collect,6,9x9,69,0,0,23,70,64,17.5,5000,12000,14500,60-85%,yes
+454,normal,"Biscuit Boulevard","nuts 2 + crates",nuts+crates,5,8x8,58,0,8,34,70,74,23.9,7000,18500,22000,60-85%,yes
+455,normal,"Biscuit Boulevard","crates + collect 25 toffee",crates+collect,6,9x9,72,0,8,30,74,74,23.5,3100,9000,10500,60-85%,yes
+456,normal,"Biscuit Boulevard","collect 28 lollipop + collect 32 toffee",collect,6,9x9,65,0,0,27,72,72,21.6,3600,11000,14000,60-85%,yes
+457,normal,"Biscuit Boulevard","score 14500",score,5,9x9,81,0,0,14,70,80,9.7,14500,16500,19000,60-85%,yes
+458,normal,"Biscuit Boulevard","collect 36 lollipop",collect,6,9x9,68,0,0,38,72,72,29.5,4900,11000,14500,60-85%,yes
+459,normal,"Biscuit Boulevard","caramel + collect 29 chocolate",caramel+collect,5,8x8,60,39,0,16,68,62,12.5,4700,14500,21000,60-85%,yes
+460,hard,"Biscuit Boulevard","nuts 3 + crates",nuts+crates,5,9x9,57,0,11,25,38,36,21.3,6000,20000,25000,30-50%,yes
+461,relief,"Cinnamon Cottage","caramel",caramel,5,9x9,69,25,0,10,82,72,8.0,2700,8500,13000,60-85%,yes
+462,normal,"Cinnamon Cottage","crates",crates,5,9x9,72,0,8,22,70,72,16.5,3800,10500,13000,60-85%,yes
+463,normal,"Cinnamon Cottage","caramel",caramel,5,9x9,77,45,0,29,68,78,19.6,11000,29000,39000,60-85%,yes
+464,normal,"Cinnamon Cottage","caramel + crates",caramel+crates,5,8x9,68,43,4,18,68,60,14.5,5500,15000,21000,60-85%,yes
+465,normal,"Cinnamon Cottage","caramel",caramel,5,9x9,69,35,0,23,70,66,16.7,7000,20000,24000,60-85%,yes
+466,normal,"Cinnamon Cottage","nuts 3 + collect 26 toffee",nuts+collect,6,9x9,77,0,0,37,68,60,23.2,7500,18000,21000,60-85%,yes
+467,normal,"Cinnamon Cottage","collect 37 lollipop",collect,5,9x9,65,0,0,15,68,76,11.5,4000,12000,15500,60-85%,yes
+468,normal,"Cinnamon Cottage","collect 30 donut + collect 28 cupcake",collect,6,9x9,65,0,0,31,68,58,26.0,4300,10500,13000,60-85%,yes
+469,normal,"Cinnamon Cottage","caramel + crates",caramel+crates,5,9x9,69,39,4,29,72,76,21.9,12000,29000,37000,60-85%,yes
+470,hard,"Cinnamon Cottage","crates + collect 30 chocolate",crates+collect,6,9x9,57,0,9,27,40,36,24.1,4100,11000,12000,30-50%,yes
+471,relief,"Cinnamon Cottage","nuts 2",nuts,5,9x9,69,0,0,24,84,82,13.9,5000,17500,22000,60-85%,yes
+472,normal,"Cinnamon Cottage","caramel + collect 29 chocolate",caramel+collect,5,9x9,69,39,0,21,70,76,14.3,8000,20000,35000,60-85%,yes
+473,normal,"Cinnamon Cottage","nuts 3 + caramel",nuts+caramel,5,9x9,57,55,0,32,68,70,23.4,10000,24000,31000,60-85%,yes
+474,normal,"Cinnamon Cottage","caramel + collect 28 chocolate",caramel+collect,5,9x9,70,70,0,43,70,72,29.1,10000,23000,28000,60-85%,yes
+475,normal,"Cinnamon Cottage","nuts 3 + caramel",nuts+caramel,5,9x9,69,39,0,33,70,68,22.2,9000,23000,30000,60-85%,yes
+476,normal,"Cinnamon Cottage","nuts 4",nuts,5,8x8,56,0,0,31,70,86,20.7,7500,19500,25000,60-85%,yes
+477,normal,"Cinnamon Cottage","caramel + crates",caramel+crates,5,8x8,60,12,7,16,68,90,11.5,2900,8500,12500,60-85%,yes
+478,normal,"Cinnamon Cottage","caramel",caramel,5,8x8,56,38,0,27,68,48,20.3,8500,20000,24000,60-85%,yes
+479,normal,"Cinnamon Cottage","caramel + crates",caramel+crates,5,9x9,72,32,6,28,72,62,19.6,6000,16000,21000,60-85%,yes
+480,hard,"Cinnamon Cottage","nuts 3 + crates",nuts+crates,6,8x9,72,0,9,38,42,46,28.3,8500,18500,21000,30-50%,yes
+481,relief,"Golden Twist Palace","nuts 2",nuts,4,8x8,64,0,0,11,82,90,7.1,4400,22000,33000,60-85%,yes
+482,normal,"Golden Twist Palace","nuts 3 + crates",nuts+crates,6,9x9,73,0,3,40,70,60,25.3,7000,17000,23000,60-85%,yes
+483,normal,"Golden Twist Palace","crates + collect 28 chocolate",crates+collect,5,9x9,63,0,8,18,68,54,13.8,4100,12500,17500,60-85%,yes
+484,normal,"Golden Twist Palace","caramel + collect 28 macaron",caramel+collect,5,9x9,72,36,0,27,70,74,18.3,5500,15000,21000,60-85%,yes
+485,normal,"Golden Twist Palace","score 15000",score,5,9x9,61,0,0,22,70,72,16.8,15000,17000,19000,60-85%,yes
+486,normal,"Golden Twist Palace","crates",crates,5,9x9,63,0,7,10,74,60,7.7,1500,6000,9000,60-85%,yes
+487,normal,"Golden Twist Palace","caramel + collect 28 donut",caramel+collect,6,9x9,69,33,0,41,68,84,25.8,6000,15500,18500,60-85%,yes
+488,normal,"Golden Twist Palace","crates",crates,6,8x8,60,0,8,13,72,72,9.4,1600,5000,7000,60-85%,yes
+489,normal,"Golden Twist Palace","nuts 3 + collect 29 toffee",nuts+collect,5,9x9,61,0,0,45,68,60,27.4,7500,22000,26000,60-85%,yes
+490,hard,"Golden Twist Palace","nuts 3 + crates",nuts+crates,5,9x9,65,0,7,21,38,42,15.8,6500,17500,23000,30-50%,yes
+491,relief,"Golden Twist Palace","caramel",caramel,5,9x9,61,31,0,18,84,82,10.6,4500,11500,16000,60-85%,yes
+492,normal,"Golden Twist Palace","crates",crates,5,9x9,68,0,6,29,70,72,19.5,4400,12000,13500,60-85%,yes
+493,normal,"Golden Twist Palace","crates",crates,5,9x9,67,0,8,15,70,74,8.7,2200,8000,11500,60-85%,yes
+494,normal,"Golden Twist Palace","caramel + crates",caramel+crates,5,9x9,69,45,2,19,70,78,12.7,6500,15500,22000,60-85%,yes
+495,normal,"Golden Twist Palace","score 15500",score,5,9x9,69,0,0,22,70,60,16.1,15500,18000,20000,60-85%,yes
+496,normal,"Golden Twist Palace","collect 32 cupcake + collect 34 chocolate",collect,5,9x9,69,0,0,19,76,88,14.8,4900,13000,15500,60-85%,yes
+497,normal,"Golden Twist Palace","score 15500",score,6,8x9,72,0,0,39,72,86,29.8,15500,18000,20000,60-85%,yes
+498,normal,"Golden Twist Palace","caramel",caramel,5,9x9,81,45,0,28,66,84,20.2,12500,33000,41000,60-85%,yes
+499,normal,"Golden Twist Palace","caramel + collect 27 cupcake",caramel+collect,5,9x9,57,12,0,20,74,54,15.1,4900,13000,18000,60-85%,yes
+500,hard,"Golden Twist Palace","crates + collect 31 lollipop",crates+collect,6,9x9,75,0,9,33,38,22,28.2,4800,11500,14000,30-50%,yes

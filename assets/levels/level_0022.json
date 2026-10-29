@@ -1,0 +1,39 @@
+{
+  "id": 22,
+  "kind": "tutorial",
+  "moves": 22,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop"
+  ],
+  "goals": [
+    {
+      "type": "crates"
+    },
+    {
+      "type": "collect",
+      "sweet": "toffee",
+      "count": 30
+    }
+  ],
+  "stars": [3300, 11500, 15000],
+  "board": [
+    ".........",
+    ".........",
+    "..2...2..",
+    "..#...#..",
+    "..#.3.#..",
+    "..#...#..",
+    "..2...2..",
+    ".........",
+    "........."
+  ],
+  "tutorial": {
+    "id": "crate3",
+    "title": "Sturdy crates",
+    "text": "Some crates need 2 or 3 hits. Each nearby match knocks off one brace."
+  }
+}

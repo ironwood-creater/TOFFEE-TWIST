@@ -1,0 +1,29 @@
+{
+  "id": 29,
+  "kind": "tutorial",
+  "moves": 24,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop"
+  ],
+  "goals": [
+    {
+      "type": "caramel"
+    }
+  ],
+  "stars": [8500, 23000, 28000],
+  "board": [
+    "##ccccc##",
+    "#ccccccc#",
+    "ccccccccc",
+    "ccccccccc",
+    "ccccccccc",
+    "ccccccccc",
+    "ccccccccc",
+    "#ccccccc#",
+    "##ccccc##"
+  ]
+}

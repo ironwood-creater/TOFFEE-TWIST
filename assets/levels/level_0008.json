@@ -1,0 +1,44 @@
+{
+  "id": 8,
+  "kind": "tutorial",
+  "moves": 19,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop"
+  ],
+  "goals": [
+    {
+      "type": "score",
+      "target": 12000
+    }
+  ],
+  "stars": [12000, 15500, 18000],
+  "board": [
+    "........",
+    "........",
+    "........",
+    "........",
+    "........",
+    "........",
+    "........",
+    "........"
+  ],
+  "preset": [
+    "........",
+    "........",
+    "........",
+    "...l....",
+    ".lltll..",
+    "........",
+    "........",
+    "........"
+  ],
+  "tutorial": {
+    "id": "swirl",
+    "title": "Toffee Swirl",
+    "text": "Match 5 in a line to make a Toffee Swirl. Swap it with any sweet to clear every sweet of that kind!"
+  }
+}

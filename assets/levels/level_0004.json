@@ -1,0 +1,44 @@
+{
+  "id": 4,
+  "kind": "tutorial",
+  "moves": 13,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron"
+  ],
+  "goals": [
+    {
+      "type": "collect",
+      "sweet": "toffee",
+      "count": 60
+    }
+  ],
+  "stars": [7500, 22000, 31000],
+  "board": [
+    "........",
+    "........",
+    "........",
+    "........",
+    "........",
+    "........",
+    "........",
+    "........"
+  ],
+  "preset": [
+    "........",
+    "........",
+    "........",
+    "........",
+    "..ttkt..",
+    "....t...",
+    "........",
+    "........"
+  ],
+  "tutorial": {
+    "id": "striped",
+    "title": "Striped Toffee",
+    "text": "Match 4 in a line to make a Striped Toffee. Match it again to clear a whole row or column!"
+  }
+}

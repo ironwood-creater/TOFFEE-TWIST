@@ -1,0 +1,30 @@
+{
+  "id": 251,
+  "kind": "relief",
+  "moves": 18,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop"
+  ],
+  "goals": [
+    {
+      "type": "caramel"
+    }
+  ],
+  "stars": [4100, 12000, 17500],
+  "board": [
+    "...ccc...",
+    "...ccc...",
+    "#..ccc..#",
+    "##ccccc##",
+    "###ccc###",
+    "##ccccc##",
+    "#..ccc..#",
+    "...ccc...",
+    ".#.ccc.#."
+  ],
+  "seed": 858193505
+}

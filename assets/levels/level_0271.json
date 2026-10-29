@@ -1,0 +1,30 @@
+{
+  "id": 271,
+  "kind": "relief",
+  "moves": 25,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "macaron",
+    "lollipop",
+    "chocolate"
+  ],
+  "goals": [
+    {
+      "type": "caramel"
+    }
+  ],
+  "stars": [6500, 21000, 30000],
+  "board": [
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    "#.......#",
+    "ccccccccc",
+    "ccccccccc",
+    "ccccccccc"
+  ],
+  "seed": 1921053896
+}

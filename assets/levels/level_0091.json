@@ -1,0 +1,31 @@
+{
+  "id": 91,
+  "kind": "relief",
+  "moves": 13,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "lollipop",
+    "chocolate"
+  ],
+  "goals": [
+    {
+      "type": "nuts",
+      "count": 1,
+      "maxOnBoard": 1
+    }
+  ],
+  "stars": [2100, 9000, 15000],
+  "board": [
+    "....n...",
+    "........",
+    "........",
+    "........",
+    "........",
+    "........",
+    "........",
+    "........"
+  ],
+  "seed": 1090588544
+}

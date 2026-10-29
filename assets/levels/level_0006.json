@@ -1,0 +1,44 @@
+{
+  "id": 6,
+  "kind": "tutorial",
+  "moves": 11,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron"
+  ],
+  "goals": [
+    {
+      "type": "collect",
+      "sweet": "donut",
+      "count": 60
+    }
+  ],
+  "stars": [7000, 24000, 39000],
+  "board": [
+    "........",
+    "........",
+    "........",
+    "........",
+    "........",
+    "........",
+    "........",
+    "........"
+  ],
+  "preset": [
+    "........",
+    "........",
+    "....d...",
+    "..ddm...",
+    "....d...",
+    "....d...",
+    "........",
+    "........"
+  ],
+  "tutorial": {
+    "id": "box",
+    "title": "Sweet Box",
+    "text": "Match sweets in an L or T shape to make a Sweet Box. It explodes twice!"
+  }
+}

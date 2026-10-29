@@ -1,0 +1,41 @@
+{
+  "id": 18,
+  "kind": "tutorial",
+  "moves": 21,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop"
+  ],
+  "goals": [
+    {
+      "type": "collect",
+      "sweet": "donut",
+      "count": 35
+    },
+    {
+      "type": "collect",
+      "sweet": "macaron",
+      "count": 35
+    }
+  ],
+  "stars": [4800, 14000, 16500],
+  "board": [
+    "###...###",
+    "##.....##",
+    "#.......#",
+    ".........",
+    ".........",
+    ".........",
+    "#.......#",
+    "##.....##",
+    "###...###"
+  ],
+  "tutorial": {
+    "id": "shape",
+    "title": "All shapes and sizes",
+    "text": "Boards come in many shapes. Sweets fall straight through the gaps to fill empty cells."
+  }
+}

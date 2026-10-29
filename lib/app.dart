@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 
 import 'game/logic/level.dart';
 import 'screens/game_screen.dart';
+import 'services/services.dart';
 import 'theme.dart';
 
 class ToffeeTwistApp extends StatelessWidget {
@@ -50,6 +51,11 @@ class _DevLauncherState extends State<_DevLauncher> {
         goals: test == 'win' ? const [GoalDef.score(60)] : const [GoalDef.collect(2, 40), GoalDef.collect(4, 30)],
         stars: const [60, 1500, 3000],
       );
+      return;
+    }
+    final id = kIsWeb ? int.tryParse(Uri.base.queryParameters['level'] ?? '') : null;
+    if (id != null) {
+      Services.levels.load(id).then((l) => setState(() => _level = l));
       return;
     }
     rootBundle.loadString('assets/levels/sandbox.json').then((t) {

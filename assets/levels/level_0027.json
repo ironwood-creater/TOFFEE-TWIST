@@ -1,0 +1,36 @@
+{
+  "id": 27,
+  "kind": "tutorial",
+  "moves": 21,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop"
+  ],
+  "goals": [
+    {
+      "type": "caramel"
+    },
+    {
+      "type": "crates"
+    },
+    {
+      "type": "collect",
+      "sweet": "donut",
+      "count": 30
+    }
+  ],
+  "stars": [4400, 11500, 14500],
+  "board": [
+    "#..###..#",
+    ".ccccccc.",
+    ".ccccccc.",
+    ".ccccccc.",
+    "#..1.1..#",
+    "##..2..##",
+    "###...###",
+    "####.####"
+  ]
+}

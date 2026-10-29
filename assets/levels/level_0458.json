@@ -1,0 +1,33 @@
+{
+  "id": 458,
+  "kind": "normal",
+  "moves": 38,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop",
+    "chocolate"
+  ],
+  "goals": [
+    {
+      "type": "collect",
+      "sweet": "lollipop",
+      "count": 36
+    }
+  ],
+  "stars": [4900, 11000, 14500],
+  "board": [
+    ".........",
+    ".........",
+    "#.......#",
+    "...###...",
+    ".#.###.#.",
+    "...###...",
+    ".........",
+    ".........",
+    "........."
+  ],
+  "seed": 834713409
+}

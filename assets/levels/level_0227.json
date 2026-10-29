@@ -1,0 +1,34 @@
+{
+  "id": 227,
+  "kind": "normal",
+  "moves": 14,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop"
+  ],
+  "goals": [
+    {
+      "type": "nuts",
+      "count": 1,
+      "maxOnBoard": 1
+    },
+    {
+      "type": "crates"
+    }
+  ],
+  "stars": [2000, 5000, 7500],
+  "board": [
+    "####n####",
+    "###1.1###",
+    "##.....##",
+    "#...1...#",
+    "..11111..",
+    ".........",
+    ".........",
+    "#..###..#"
+  ],
+  "seed": 1421617967
+}

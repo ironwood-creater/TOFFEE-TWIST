@@ -1,0 +1,60 @@
+{
+  "id": 9,
+  "kind": "tutorial",
+  "moves": 20,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop"
+  ],
+  "goals": [
+    {
+      "type": "collect",
+      "sweet": "lollipop",
+      "count": 35
+    },
+    {
+      "type": "collect",
+      "sweet": "donut",
+      "count": 35
+    }
+  ],
+  "stars": [5500, 13500, 17000],
+  "board": [
+    "#......#",
+    "........",
+    "........",
+    "........",
+    "........",
+    "........",
+    "........",
+    "#......#"
+  ],
+  "preset": [
+    "........",
+    "........",
+    "........",
+    "........",
+    "...tk...",
+    "........",
+    "........",
+    "........"
+  ],
+  "presetSpecials": [
+    "........",
+    "........",
+    "........",
+    "........",
+    "...-|...",
+    "........",
+    "........",
+    "........"
+  ],
+  "tutorial": {
+    "id": "combo",
+    "title": "Super combos",
+    "text": "Swap two special sweets together for a giant combo. Try it with these two Striped Toffees!"
+  }
+}

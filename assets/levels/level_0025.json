@@ -1,0 +1,36 @@
+{
+  "id": 25,
+  "kind": "tutorial",
+  "moves": 17,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "donut",
+    "macaron",
+    "lollipop",
+    "chocolate"
+  ],
+  "goals": [
+    {
+      "type": "score",
+      "target": 6000
+    }
+  ],
+  "stars": [6000, 7500, 9000],
+  "board": [
+    "##.....##",
+    "#.......#",
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    "#.......#",
+    "##.....##"
+  ],
+  "tutorial": {
+    "id": "six",
+    "title": "Six sweets",
+    "text": "All six sweets are here now, so matches are harder to find. Make specials whenever you can!"
+  }
+}

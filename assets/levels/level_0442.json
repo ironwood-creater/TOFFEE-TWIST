@@ -1,0 +1,35 @@
+{
+  "id": 442,
+  "kind": "normal",
+  "moves": 21,
+  "sweets": [
+    "toffee",
+    "cupcake",
+    "macaron",
+    "lollipop",
+    "chocolate"
+  ],
+  "goals": [
+    {
+      "type": "caramel"
+    },
+    {
+      "type": "collect",
+      "sweet": "macaron",
+      "count": 26
+    }
+  ],
+  "stars": [4900, 16000, 20000],
+  "board": [
+    ".........",
+    ".........",
+    "#.......#",
+    "##.....##",
+    "###...###",
+    "##ccccc##",
+    "#ccccccc#",
+    "ccccccccc",
+    "ccccccccc"
+  ],
+  "seed": 297651247
+}
