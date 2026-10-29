@@ -71,12 +71,17 @@ jobs:
             build/app/outputs/flutter-apk/app-release.apk
             build/app/outputs/bundle/release/app-release.aab
 
-  # Installs the APK on an Android emulator and checks that the game opens
-  # without crashing. The crash log is printed in this job's output.
+  # Installs the APK on Android emulators (Android 7, 9, 12, 14 and 16) and
+  # checks that the game opens without crashing. The crash log is printed in
+  # each job's output.
   emulator-test:
     needs: build
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        api-level: [24, 28, 31, 34, 36]
     steps:
       - uses: actions/checkout@v4
 
@@ -94,7 +99,7 @@ jobs:
       - name: Open the game on the emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 34
+          api-level: ${{ matrix.api-level }}
           target: google_apis
           arch: x86_64
           disable-animations: true
@@ -104,7 +109,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: emulator-test
+          name: emulator-test-api${{ matrix.api-level }}
           path: |
             logcat.txt
             emulator-screenshot.png
@@ -121,7 +126,7 @@ jobs:
 
       - uses: actions/download-artifact@v4
         with:
-          name: emulator-test
+          pattern: emulator-test-*
           path: emulator
 
       - name: Publish to the "Latest build" release
@@ -132,12 +137,15 @@ jobs:
         run: |
           cp artifact/flutter-apk/app-release.apk toffee-twist.apk
           cp artifact/bundle/release/app-release.aab toffee-twist.aab
+          for d in emulator/emulator-test-api*; do
+            cp "$d/emulator-screenshot.png" "emulator-${d##*-}.png"
+          done
           if [ "$SIGNED" = true ]; then
             SIGNING="The .aab is signed with your upload key and can be uploaded to Google Play."
           else
             SIGNING="Signed with a debug key: the .apk installs on a phone, but Google Play will not accept this .aab (see the top of .github/workflows/build-android.yml)."
           fi
           gh release delete latest-build --yes --cleanup-tag || true
-          gh release create latest-build toffee-twist.apk toffee-twist.aab emulator/emulator-screenshot.png \
+          gh release create latest-build toffee-twist.apk toffee-twist.aab emulator-api*.png \
             --target "$GITHUB_SHA" --prerelease --title "Latest build" \
-            --notes "Built automatically from commit $GITHUB_SHA and opened on an Android emulator without crashing. $SIGNING"
+            --notes "Built automatically from commit $GITHUB_SHA and opened without crashing on Android 7, 9, 12, 14 and 16 emulators. $SIGNING"

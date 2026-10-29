@@ -71,6 +71,11 @@ android {
             } else {
                 signingConfigs.getByName("debug")
             }
+            // No R8 code shrinking: it removed a constructor that WorkManager
+            // (used by the ads SDK) creates by reflection, and the game crashed
+            // on start ("Failed to create an instance of WorkDatabase").
+            isMinifyEnabled = false
+            isShrinkResources = false
         }
     }
 }

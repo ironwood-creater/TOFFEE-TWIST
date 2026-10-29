@@ -178,6 +178,10 @@ of `.github/workflows/build-android.yml`.
   for new apps and updates in 2026).
 - Release signing is configured in `android/app/build.gradle.kts`; it reads
   `android/key.properties`.
+- Release builds are not shrunk with R8 (`isMinifyEnabled = false`): R8 broke
+  WorkManager, which the ads SDK uses, and the game crashed on start. Every
+  GitHub build is opened on Android 7, 9, 12, 14 and 16 emulators before it is
+  published, so a crash like that cannot slip through again.
 - The AdMob app ID is copied into the Android manifest at build time from
   `lib/config/ads_config.dart`, so all ad IDs live in one file.
 - Purchases are checked by Google Play only (there is no server). That is

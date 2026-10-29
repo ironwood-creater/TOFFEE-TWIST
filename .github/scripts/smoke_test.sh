@@ -27,4 +27,4 @@ grep -E " (I|W|E) flutter" logcat.txt | head -100
 echo "---- app process messages ----"
 grep -E "$PKG|AndroidRuntime|libc  |DEBUG   " logcat.txt | head -100
 
-[ "$RUNNING" = yes ] && ! grep -q "FATAL EXCEPTION" logcat.txt
+[ "$RUNNING" = yes ] && ! grep -qE "FATAL EXCEPTION|Unhandled Exception" logcat.txt
