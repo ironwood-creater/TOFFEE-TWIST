@@ -5,7 +5,8 @@ import 'dart:ui';
 import 'package:flame/components.dart';
 
 /// A pooled particle system: all particles live in fixed-size typed arrays
-/// that are reused, so bursts never allocate objects (smooth 60 fps).
+/// that are reused, so bursts never allocate objects, and all of them are
+/// drawn with a single `drawRawAtlas` call (smooth 60 fps on slow phones).
 class ParticleLayer extends Component {
   ParticleLayer() : super(priority: 50);
 
@@ -24,7 +25,37 @@ class ParticleLayer extends Component {
   final _shape = Uint8List(capacity);
   int _count = 0;
   final _rand = math.Random();
-  final Paint _paint = Paint();
+  final Paint _paint = Paint()..filterQuality = FilterQuality.low;
+
+  // Per-frame draw data for drawRawAtlas (reused every frame).
+  final _xform = Float32List(capacity * 4);
+  final _rects = Float32List(capacity * 4);
+  final _colors = Int32List(capacity);
+
+  /// White shapes (circle, crumb, sparkle) in one small image; each particle
+  /// is drawn as a tinted, scaled and rotated copy of one of them.
+  static Image? _atlas;
+  static const double _cell = 64;
+
+  /// How many atlas pixels one unit of particle size is, per shape.
+  static const _unit = [30.0, 30.0, 25.0];
+
+  static Image _buildAtlas() {
+    final rec = PictureRecorder();
+    final c = Canvas(rec);
+    final p = Paint()..color = const Color(0xFFFFFFFF);
+    // circle: radius 1 unit
+    c.drawCircle(const Offset(32, 32), 30, p);
+    // crumb: 1.6 x 1 units
+    c.drawRect(Rect.fromCenter(center: const Offset(96, 32), width: 48, height: 30), p);
+    // sparkle: a cross 2.4 units long, 0.5 units thick
+    c.drawRect(Rect.fromCenter(center: const Offset(160, 32), width: 60, height: 12.5), p);
+    c.drawRect(Rect.fromCenter(center: const Offset(160, 32), width: 12.5, height: 60), p);
+    final picture = rec.endRecording();
+    final image = picture.toImageSync(3 * _cell.toInt(), _cell.toInt());
+    picture.dispose();
+    return image;
+  }
 
   int get activeCount => _count;
 
@@ -100,27 +131,39 @@ class ParticleLayer extends Component {
 
   @override
   void render(Canvas canvas) {
+    if (_count == 0) return;
+    final atlas = _atlas ??= _buildAtlas();
     for (var i = 0; i < _count; i++) {
       final k = _life[i] / _maxLife[i];
       final argb = _color[i];
       final alpha = ((argb >>> 24) * math.min(1.0, k * 1.6)).round();
-      _paint.color = Color((argb & 0x00FFFFFF) | (alpha << 24));
-      final s = _size[i] * (0.5 + 0.5 * k);
-      switch (_shape[i]) {
-        case crumb:
-          canvas.save();
-          canvas.translate(_x[i], _y[i]);
-          canvas.rotate(_rot[i]);
-          canvas.drawRect(Rect.fromCenter(center: Offset.zero, width: s * 1.6, height: s), _paint);
-          canvas.restore();
-        case sparkle:
-          final x = _x[i];
-          final y = _y[i];
-          canvas.drawRect(Rect.fromCenter(center: Offset(x, y), width: s * 2.4, height: s * 0.5), _paint);
-          canvas.drawRect(Rect.fromCenter(center: Offset(x, y), width: s * 0.5, height: s * 2.4), _paint);
-        default:
-          canvas.drawCircle(Offset(_x[i], _y[i]), s, _paint);
-      }
+      _colors[i] = (argb & 0x00FFFFFF) | (alpha << 24);
+      final shape = _shape[i];
+      final scale = _size[i] * (0.5 + 0.5 * k) / _unit[shape];
+      // Sparkles do not spin.
+      final rot = shape == crumb ? _rot[i] : 0.0;
+      final scos = math.cos(rot) * scale;
+      final ssin = math.sin(rot) * scale;
+      const half = _cell / 2;
+      final j = i * 4;
+      _xform[j] = scos;
+      _xform[j + 1] = ssin;
+      _xform[j + 2] = _x[i] - scos * half + ssin * half;
+      _xform[j + 3] = _y[i] - ssin * half - scos * half;
+      final left = shape * _cell;
+      _rects[j] = left;
+      _rects[j + 1] = 0;
+      _rects[j + 2] = left + _cell;
+      _rects[j + 3] = _cell;
     }
+    canvas.drawRawAtlas(
+      atlas,
+      Float32List.sublistView(_xform, 0, _count * 4),
+      Float32List.sublistView(_rects, 0, _count * 4),
+      Int32List.sublistView(_colors, 0, _count),
+      BlendMode.modulate,
+      null,
+      _paint,
+    );
   }
 }

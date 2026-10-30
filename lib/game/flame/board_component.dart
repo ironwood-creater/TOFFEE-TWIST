@@ -42,12 +42,17 @@ class BoardComponent extends PositionComponent with DragCallbacks, TapCallbacks
   late List<PieceSprite?> _cells;
   final Map<int, PieceSprite> _byId = {};
   late final ParticleLayer particles = ParticleLayer();
-  late final FxLayer fx = FxLayer();
+  late final FxLayer fx = FxLayer(pixelRatio: pixelRatio);
 
   // Local copies of blockers so they change in step with the animations.
   late List<int> _caramel;
   late List<int> _crates;
-  ui.Picture? _bg;
+  // The tray, tiles and blockers are drawn into one image that is only redrawn
+  // when a blocker changes (instead of redrawing ~400 shapes every frame).
+  ui.Image? _bg;
+  Rect _bgSrc = Rect.zero;
+  Rect _bgDst = Rect.zero;
+  final Paint _bgPaint = Paint()..filterQuality = FilterQuality.medium;
   bool _bgDirty = true;
 
   Vector2 _basePos = Vector2.zero();
@@ -189,14 +194,15 @@ class BoardComponent extends PositionComponent with DragCallbacks, TapCallbacks
   void update(double dt) {
     super.update(dt);
     if (_timers.isNotEmpty) {
-      final due = <_Timer>[];
       for (final t in _timers) {
         t.left -= dt;
-        if (t.left <= 0) due.add(t);
       }
-      for (final t in due) {
-        _timers.remove(t);
-        t.fn();
+      if (_timers.any((t) => t.left <= 0)) {
+        final due = _timers.where((t) => t.left <= 0).toList();
+        _timers.removeWhere((t) => t.left <= 0);
+        for (final t in due) {
+          t.fn();
+        }
       }
     }
     if (_shake > 0) {
@@ -244,10 +250,10 @@ class BoardComponent extends PositionComponent with DragCallbacks, TapCallbacks
   void render(Canvas canvas) {
     if (_bgDirty || _bg == null) {
       _bg?.dispose();
-      _bg = _paintBackground();
+      _bg = _renderBackground();
       _bgDirty = false;
     }
-    canvas.drawPicture(_bg!);
+    canvas.drawImageRect(_bg!, _bgSrc, _bgDst, _bgPaint);
     if (session.boosterMode != BoosterMode.none) {
       final r = RRect.fromRectAndRadius(
           (Vector2.zero() & size).inflate(tile * 0.14), Radius.circular(tile * 0.3));
@@ -261,9 +267,33 @@ class BoardComponent extends PositionComponent with DragCallbacks, TapCallbacks
     }
   }
 
-  ui.Picture _paintBackground() {
+  @override
+  void onRemove() {
+    _bg?.dispose();
+    _bg = null;
+    super.onRemove();
+  }
+
+  ui.Image _renderBackground() {
+    // Shadows and the nut arrows reach a bit outside the board.
+    final margin = (tile * 0.5).ceilToDouble();
+    final pr = pixelRatio;
+    final w = ((size.x + margin * 2) * pr).ceil();
+    final h = ((size.y + margin * 2) * pr).ceil();
     final rec = ui.PictureRecorder();
-    final c = Canvas(rec);
+    final c = Canvas(rec)
+      ..scale(pr)
+      ..translate(margin, margin);
+    _paintBackground(c);
+    final picture = rec.endRecording();
+    final image = picture.toImageSync(w, h);
+    picture.dispose();
+    _bgSrc = Rect.fromLTWH(0, 0, w.toDouble(), h.toDouble());
+    _bgDst = Rect.fromLTWH(-margin, -margin, w / pr, h / pr);
+    return image;
+  }
+
+  void _paintBackground(Canvas c) {
     final shadow = Paint()..color = const Color(0x44000000);
     final tray = Paint()..color = AppColors.chocolate;
     final trayEdge = Paint()..color = AppColors.chocolateDark;
@@ -309,7 +339,6 @@ class BoardComponent extends PositionComponent with DragCallbacks, TapCallbacks
         c.drawPath(path, arrow);
       }
     }
-    return rec.endRecording();
   }
 
   // ---------------------------------------------------------------------------
@@ -333,11 +362,17 @@ class BoardComponent extends PositionComponent with DragCallbacks, TapCallbacks
     }
   }
 
+  /// How far a finger must move before it counts as a swipe. Capped so big
+  /// tablet tiles do not need long swipes (Flutter's own touch slop is 18).
+  double get _swipeDistance => math.min(tile * 0.3, 14);
+
   @override
   void onDragStart(DragStartEvent event) {
     super.onDragStart(event);
     resetIdle();
-    _dragCell = session.canAct ? _cellAt(event.localPosition) : -1;
+    // Remember the cell even while the last move is still animating: the
+    // swipe counts if the board is ready by the time it is long enough.
+    _dragCell = _cellAt(event.localPosition);
     _drag.setZero();
   }
 
@@ -345,12 +380,19 @@ class BoardComponent extends PositionComponent with DragCallbacks, TapCallbacks
   void onDragUpdate(DragUpdateEvent event) {
     if (_dragCell < 0) return;
     _drag.add(event.localDelta);
-    if (_drag.length < tile * 0.3) return;
+    // With the Rolling Pin selected, a shaky tap must not swap pieces.
+    if (session.boosterMode == BoosterMode.rollingPin) return;
+    if (_drag.length < _swipeDistance) return;
+    _swipe();
+  }
+
+  void _swipe() {
+    final from = _dragCell;
+    _dragCell = -1;
+    if (!session.canAct) return;
     final horizontal = _drag.x.abs() > _drag.y.abs();
     final dr = horizontal ? 0 : _drag.y.sign.toInt();
     final dc = horizontal ? _drag.x.sign.toInt() : 0;
-    final from = _dragCell;
-    _dragCell = -1;
     final to = board.neighbor(from, dr, dc);
     if (to >= 0 && board.playable[to]) {
       _select(-1);
@@ -361,6 +403,21 @@ class BoardComponent extends PositionComponent with DragCallbacks, TapCallbacks
   @override
   void onDragEnd(DragEndEvent event) {
     super.onDragEnd(event);
+    if (_dragCell >= 0) {
+      if (session.boosterMode == BoosterMode.rollingPin) {
+        // A tap that moved a little: still use the Rolling Pin there.
+        if (_drag.length < tile * 0.6 && session.canAct) session.useRollingPin(_dragCell);
+      } else if (_drag.length >= 8) {
+        // A very short flick still counts as a swipe.
+        _swipe();
+      }
+    }
+    _dragCell = -1;
+  }
+
+  @override
+  void onDragCancel(DragCancelEvent event) {
+    super.onDragCancel(event);
     _dragCell = -1;
   }
 

@@ -107,11 +107,17 @@ class PieceSprite extends PositionComponent {
   void update(double dt) {
     super.update(dt);
     _clock += dt;
-    if (_anims.isEmpty) return;
-    for (final a in List.of(_anims)) {
+    // Index loop (no list copy every frame); finished animations are removed
+    // in place.
+    var i = 0;
+    while (i < _anims.length) {
+      final a = _anims[i];
       if (a.delay > 0) {
         a.delay -= dt;
-        if (a.delay > 0) continue;
+        if (a.delay > 0) {
+          i++;
+          continue;
+        }
         a.t += -a.delay;
         a.delay = 0;
       } else {
@@ -120,8 +126,10 @@ class PieceSprite extends PositionComponent {
       final k = (a.t / a.duration).clamp(0.0, 1.0);
       a.apply(a.curve.transform(k));
       if (k >= 1) {
-        _anims.remove(a);
+        _anims.removeAt(i);
         a.done.complete();
+      } else {
+        i++;
       }
     }
   }

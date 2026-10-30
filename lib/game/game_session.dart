@@ -134,6 +134,10 @@ class GameSession extends ChangeNotifier {
     moves = engine.movesLeft;
     phase = SessionPhase.playing;
     notifyListeners();
+    // The last move can leave a board without any possible move (the engine
+    // only reshuffles while the game is still running).
+    final ev = engine.shuffleIfNeeded();
+    if (ev.isNotEmpty) _play(ev);
   }
 
   Future<void> _play(List<BoardEvent> events) async {
