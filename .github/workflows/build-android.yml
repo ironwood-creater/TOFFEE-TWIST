@@ -19,7 +19,7 @@ name: Build Android app
 on:
   workflow_dispatch:
   push:
-    paths-ignore: ['**.md', 'docs/**', 'store_assets/**']
+    paths-ignore: ['**.md', 'docs/**', 'store_assets/**', 'website/**', 'tool/website/**']
 
 permissions:
   contents: write
