@@ -24,6 +24,13 @@ on:
 permissions:
   contents: write
 
+# A newer push cancels the build of an older one, so the "Latest build"
+# release always comes from the newest commit (GitHub refuses to tag an older
+# commit whose workflow file differs from the branch).
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
