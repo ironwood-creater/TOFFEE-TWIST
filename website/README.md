@@ -10,6 +10,12 @@ folder as it is (`cleanUrls`: `/privacy` serves `privacy.html`).
   python3 tool/website/build_assets.py
   ```
 
+Second address: the same site is published on GitHub Pages at
+https://ironwood-creater.github.io/TOFFEE-TWIST/ by
+`.github/workflows/website-pages.yml` (some internet providers block
+vercel.app). One-time setup: repository Settings > Pages > Source: GitHub
+Actions.
+
 Preview locally: `cd website && python3 -m http.server 8090`, then open
 http://localhost:8090 (clean URLs like `/privacy` only work on Vercel; locally
 use `/privacy.html`).

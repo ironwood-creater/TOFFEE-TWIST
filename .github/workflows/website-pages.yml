@@ -1,0 +1,55 @@
+# Publishes the website (website/) on GitHub Pages as a second address:
+#   https://ironwood-creater.github.io/TOFFEE-TWIST/
+# Some internet providers block vercel.app addresses; github.io usually works.
+#
+# One-time setup: repository Settings > Pages > Build and deployment >
+# Source: "GitHub Actions". After that it runs by itself when website/ changes.
+name: Website on GitHub Pages
+
+on:
+  workflow_dispatch:
+  push:
+    paths: ['website/**', '.github/workflows/website-pages.yml']
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # The site uses addresses from the domain root ("/assets/..."), which is
+      # right on Vercel. On GitHub Pages it lives under /TOFFEE-TWIST/.
+      - name: Prepare the site for the /TOFFEE-TWIST/ folder
+        run: |
+          cp -r website _site
+          rm -f _site/vercel.json _site/README.md
+          base="/${GITHUB_REPOSITORY#*/}"
+          find _site -name '*.html' -o -name '*.css' -o -name '*.webmanifest' | while read -r f; do
+            sed -i -E \
+              -e "s#(href|src)=\"/#\1=\"$base/#g" \
+              -e "s#url\(\"/#url(\"$base/#g" \
+              -e "s#\"src\": \"/#\"src\": \"$base/#g" \
+              -e "s#location.replace\('/#location.replace('$base/#g" \
+              "$f"
+          done
+          # Clean addresses like /privacy work on Pages for privacy.html.
+          touch _site/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
