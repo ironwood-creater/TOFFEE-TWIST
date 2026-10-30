@@ -7,15 +7,35 @@
   <meta name="robots" content="noindex">
   <link rel="icon" href="/assets/icon-32.png" sizes="32x32" type="image/png">
   <link rel="stylesheet" href="/styles.css">
+  <script>
+    // Links copied from chats often get extra characters at the end
+    // ("/privacy**", "/privacy." ...). Send those to the page that was meant.
+    (function () {
+      var p = location.pathname.toLowerCase().replace(/[^a-z_\-\/]+.*$/, '').replace(/\/+$/, '');
+      if (p.indexOf('/privacy') === 0) location.replace('/privacy');
+      else if (p === '' || p === '/index' || p === '/home') location.replace('/');
+    })();
+  </script>
 </head>
 <body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="Toffee Twist home">
+        <img src="/assets/icon-96.webp" alt="" width="42" height="42">
+        <span>Toffee Twist</span>
+      </a>
+    </div>
+  </header>
   <main class="doc">
     <div class="wrap">
       <div class="card" style="text-align:center">
         <img src="/assets/art/swirl.webp" alt="" width="120" height="120" style="margin:0 auto 12px">
         <h1>Oops, this sweet rolled away!</h1>
-        <p>The page you are looking for does not exist.</p>
-        <a class="btn" href="/">Back to Toffee Twist</a>
+        <p>There is no page at this address. Try one of these:</p>
+        <p style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+          <a class="btn" href="/">Toffee Twist home</a>
+          <a class="btn btn-light" href="/privacy">Privacy policy</a>
+        </p>
       </div>
     </div>
   </main>
