@@ -26,7 +26,8 @@ the **Flame** game engine. Package name: `com.toffetwist.toffeetwist`.
 | `assets/audio/` | Generated sound effects and music |
 | `test/` | Unit and widget tests |
 | `tool/` | Level builder, audio generator, icon/store-graphic renderers |
-| `docs/` | Privacy policy (Markdown + HTML) |
+| `docs/` | Privacy policy (Markdown + HTML copy) |
+| `website/` | The game's website (https://toffee-twist.vercel.app), incl. the privacy policy |
 | `store_assets/` | Play Store icon, feature graphic and screenshots |
 
 ## Run it

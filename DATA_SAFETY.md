@@ -66,7 +66,7 @@ other IDs" and "No data collected" is NOT correct for this app.
 
 | Section | Answer |
 |---|---|
-| **Privacy policy** | The public URL where you uploaded `docs/privacy_policy.html` (also put the same URL in `lib/config/app_config.dart`). Replace `[YOUR EMAIL]` first. |
+| **Privacy policy** | `https://toffee-twist.vercel.app/privacy` (already set in `lib/config/app_config.dart`). |
 | **App access** | All functionality is available without special access |
 | **Ads** | **Yes, my app contains ads** |
 | **Content rating** | Fill the IARC questionnaire (see below) |

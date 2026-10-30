@@ -53,8 +53,8 @@ Purchases only work after the game is installed from Google Play (Step 8).
 
 | File | What to change |
 |---|---|
-| `lib/config/app_config.dart` | `privacyPolicyUrl` (Step 5) and `supportEmail` |
-| `docs/privacy_policy.md` and `docs/privacy_policy.html` | Replace every `[YOUR EMAIL]` |
+| `lib/config/app_config.dart` | `supportEmail` (the privacy policy address is already set - Step 5) |
+| `website/privacy.html` | Optional: add your support e-mail in section 11 (Contact) |
 | `lib/config/iap_config.dart` | Keep the IDs, or change them to the IDs you create in Play Console |
 | `lib/config/ads_config.dart` | Your real AdMob IDs and `useTestAds = false` (Step 9 - do this last) |
 | `pubspec.yaml` | `version: 1.0.0+1` - increase the number after `+` for every upload |
@@ -65,14 +65,17 @@ If you want a different one, change `applicationId` and `namespace` there and
 move `android/app/src/main/kotlin/com/toffetwist/toffeetwist/MainActivity.kt`
 (and its `package` line) to match - before uploading anything.
 
-## Step 5 - Publish the privacy policy
+## Step 5 - The privacy policy
 
-Google needs a public web address. Easy free option: **GitHub Pages**.
-1. In your GitHub repository: *Settings > Pages* > Source: *Deploy from a
-   branch*, branch `main`, folder `/docs`.
-2. After a minute it is online at
-   `https://<your-github-name>.github.io/<repository-name>/privacy_policy.html`.
-3. Put that address in `lib/config/app_config.dart`.
+Google needs a public web address for it. It is already online on the game's
+website, and the game links to it:
+
+**https://toffee-twist.vercel.app/privacy**
+
+The website lives in the `website/` folder and is hosted on Vercel (project
+`toffee-twist`). Every push to GitHub updates it automatically. If you change
+the policy, edit `website/privacy.html` (and `docs/privacy_policy.md` to keep
+the copy in sync).
 
 ## Step 6 - Create your upload key (once!)
 

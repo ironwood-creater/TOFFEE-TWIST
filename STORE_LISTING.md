@@ -62,7 +62,8 @@ Ready for a sweet twist? Tap Play and start matching!
 - **Category:** Puzzle
 - **Tags** (choose up to 5 in Play Console): Match 3, Puzzle, Casual, Offline, Single player
 - **Contact email:** [YOUR EMAIL]
-- **Privacy policy:** the public URL of `docs/privacy_policy.html`
+- **Privacy policy:** https://toffee-twist.vercel.app/privacy
+- **Website:** https://toffee-twist.vercel.app
 
 ## Keywords to keep in mind (Play has no keyword field - these words already appear in the description)
 match 3, match three, sweet, sweets, toffee, dessert, puzzle, swap, combo,

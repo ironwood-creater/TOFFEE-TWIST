@@ -3,9 +3,9 @@ abstract final class AppConfig {
   static const appName = 'Toffee Twist';
   static const storeTitle = 'Toffee Twist: Sweet Match 3';
 
-  /// Where your privacy policy is hosted (for example GitHub Pages).
-  /// Upload docs/privacy_policy.html and put its public address here.
-  static const privacyPolicyUrl = 'https://example.com/toffee-twist/privacy_policy.html';
+  /// The privacy policy on the game's website (website/privacy.html, hosted
+  /// on Vercel). Use the same address in Google Play Console.
+  static const privacyPolicyUrl = 'https://toffee-twist.vercel.app/privacy';
 
   /// Contact e-mail shown in Settings (replace [YOUR EMAIL]).
   static const supportEmail = '[YOUR EMAIL]';
