@@ -4,7 +4,7 @@ publish_to: 'none'
 
 # version: <name>+<build number>. Increase the build number (+2, +3, ...) for
 # every upload to Google Play.
-version: 1.0.0+1
+version: 1.0.0+2
 
 environment:
   sdk: ^3.13.7
