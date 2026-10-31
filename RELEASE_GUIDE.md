@@ -59,11 +59,9 @@ Purchases only work after the game is installed from Google Play (Step 8).
 | `lib/config/ads_config.dart` | Your real AdMob IDs and `useTestAds = false` (Step 9 - do this last) |
 | `pubspec.yaml` | `version: 1.0.0+1` - increase the number after `+` for every upload |
 
-The package name is **com.toffetwist.toffeetwist** (set in
-`android/app/build.gradle.kts`). It can never change after your first upload.
-If you want a different one, change `applicationId` and `namespace` there and
-move `android/app/src/main/kotlin/com/toffetwist/toffeetwist/MainActivity.kt`
-(and its `package` line) to match - before uploading anything.
+The package name is **com.toffeetwist** (set in `android/app/build.gradle.kts`,
+and the one registered for the game in Play Console). It can never change after
+your first upload.
 
 ## Step 5 - The privacy policy
 

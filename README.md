@@ -1,7 +1,7 @@
 # Toffee Twist: Sweet Match 3
 
 An original, cozy match-3 puzzle game for Android, made with **Flutter** and
-the **Flame** game engine. Package name: `com.toffetwist.toffeetwist`.
+the **Flame** game engine. Package name: `com.toffeetwist`.
 
 - 6 sweets with different shapes and colors (colorblind friendly), all drawn in code
 - Striped Toffee, Sweet Box and Toffee Swirl specials, plus special+special combos

@@ -1,4 +1,4 @@
-package com.toffetwist.toffeetwist
+package com.toffeetwist
 
 import io.flutter.embedding.android.FlutterActivity
 

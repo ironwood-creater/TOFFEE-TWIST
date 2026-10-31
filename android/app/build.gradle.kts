@@ -31,7 +31,7 @@ if (admobAppId.contains("XXXX")) {
 }
 
 android {
-    namespace = "com.toffetwist.toffeetwist"
+    namespace = "com.toffeetwist"
     compileSdk = 36
     ndkVersion = flutter.ndkVersion
 
@@ -42,7 +42,7 @@ android {
 
     defaultConfig {
         // Your unique app ID on Google Play. It can never change after the first upload.
-        applicationId = "com.toffetwist.toffeetwist"
+        applicationId = "com.toffeetwist"
         // Android 7.0+. (The latest Google Mobile Ads plugin needs at least 24.)
         minSdk = 24
         // The API level Google Play currently requires for new apps and updates.

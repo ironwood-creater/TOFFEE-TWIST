@@ -4,7 +4,7 @@
 # Usage: smoke_test.sh <app.apk>
 set -u
 APK="$1"
-PKG=com.toffetwist.toffeetwist
+PKG=com.toffeetwist
 
 adb logcat -c
 adb install -r "$APK" || { echo "Could not install the APK"; exit 1; }
